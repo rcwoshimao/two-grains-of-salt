@@ -6,12 +6,12 @@ const blogPosts = import.meta.glob('../posts/*.js', { eager: true });
 // Import git history
 let gitHistory = {};
 try {
-  // Use dynamic import with a default value
   gitHistory = (await import('../data/git-history.json', { assert: { type: 'json' } })).default || {};
 } catch (error) {
   console.warn('Could not load git-history.json, using current date for all posts');
 }
 
+// Function to get post dates
 const getPostDates = (fileName) => {
   return gitHistory[fileName] || {
     createdAt: new Date().toISOString(),

@@ -13,11 +13,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
-      },
-      output: {
-        manualChunks: {
-          'git-history': ['src/data/git-history.json']
-        }
       }
     }
   }
