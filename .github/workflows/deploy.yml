@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: npm install
       
+      - name: Create data directory
+        run: mkdir -p src/data
+      
+      - name: Generate initial git-history.json
+        run: echo "{}" > src/data/git-history.json
+      
       - name: Update Git history
         run: npm run update-git-history
       

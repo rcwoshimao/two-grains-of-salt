@@ -10,7 +10,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'git-history': ['../data/git-history.json']
+          'git-history': ['src/data/git-history.json']
         }
       }
     }
