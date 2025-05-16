@@ -1,0 +1,42 @@
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-preview {
+  padding: 1.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.post-preview:hover {
+  transform: translateY(-2px);
+}
+
+.post-preview h2 {
+  margin: 0 0 1rem 0;
+}
+
+.post-preview h2 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.post-preview h2 a:hover {
+  color: #666;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}

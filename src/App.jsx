@@ -1,19 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import BlogPost from './components/BlogPost';
 import './App.css';
-import { Routes, Route } from 'react-router-dom'; 
-import Home from './Home.jsx';
 
-
-const App = () => {
-  return(
-      <div className='something'>
-        <div> Miao miao </div>
-        <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        </div>
-      </div>
-  ); 
+function App() {
+  return (
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:slug" element={<BlogPost />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
