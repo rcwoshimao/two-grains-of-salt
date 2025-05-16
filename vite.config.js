@@ -5,4 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/three-grains-of-salt/',
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'git-history': ['../data/git-history.json']
+        }
+      }
+    }
+  }
 })

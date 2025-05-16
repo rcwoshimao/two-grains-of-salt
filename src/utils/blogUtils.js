@@ -3,10 +3,11 @@ import { marked } from 'marked';
 // Import all blog posts
 const blogPosts = import.meta.glob('../posts/*.js', { eager: true });
 
-// Try to import git history, fallback to empty object if file doesn't exist
+// Import git history
 let gitHistory = {};
 try {
-  gitHistory = await import('../data/git-history.json', { assert: { type: 'json' } });
+  // Use dynamic import with a default value
+  gitHistory = (await import('../data/git-history.json', { assert: { type: 'json' } })).default || {};
 } catch (error) {
   console.warn('Could not load git-history.json, using current date for all posts');
 }
