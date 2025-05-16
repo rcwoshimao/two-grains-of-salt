@@ -7,6 +7,8 @@ export default defineConfig({
   base: '/three-grains-of-salt/',
   build: {
     target: 'esnext',
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
