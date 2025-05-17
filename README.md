@@ -33,7 +33,7 @@ Blog posts are stored as JavaScript files in the `src/posts` directory. Each pos
 
 1. **Inline Math**
    ```markdown
-   Use single dollar signs for inline equations: $E = mc^2$
+   Use backticks with dollar signs for inline equations: \`$E = mc^2$\`
    ```
 
 2. **Block Math**
@@ -67,11 +67,11 @@ Here's some inline code: \`console.log("Hello")\`
 Here's a code block:
 \`\`\`javascript
 function greet(name) {
-    return `Hello, ${name}!`;
+    return \`Hello, \${name}!\`;
 }
 \`\`\`
 
-Here's an inline equation: $E = mc^2$
+Here's an inline equation: \`$E = mc^2$\`
 
 Here's a block equation:
 \`\`\`math

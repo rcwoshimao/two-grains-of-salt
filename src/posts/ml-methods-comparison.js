@@ -15,21 +15,25 @@ Adversarial search involves explicit lookahead, simulating future move trees wit
 
 **State space of Blackjack**
 
-- Player's sum: 12–21 (since under 12 the optimal move is always "hit")
+- Player's sum: 12–21 (since under 12 the optimal move is always \`hit\`)
 - Dealer's visible card: 1–10 (Ace to 10)
 - Usable ace: True/False (whether the player has an ace that can count as 11 without busting)
 
-**10 (player sums) × 10 (dealer cards) × 2 (usable ace) → 200 total states**
+\`\`\`math
+10 \\text{ (player sums)} \\times 10 \\text{ (dealer cards)} \\times 2 \\text{ (usable ace)} \\rightarrow 200 \\text{ total states}
+\`\`\`
 
 (Common simplified representation (like in Sutton & Barto's Reinforcement Learning book))
 
 **State space in 2048** 
 
-- Each tile can be: Empty (0), 2, 4, 8, … up to 2¹⁷ = 131072 (in extremely rare cases)
-- Estimating the state space: Board size = 4×4 = 16 tiles
-- Each tile can be in ~18 possible states (log₂(131072) + 1 = 18)
+- Each tile can be: Empty (0), 2, 4, 8, … up to \`$2^{17} = 131072$\` (in extremely rare cases)
+- Estimating the state space: Board size = \`$4 \\times 4 = 16$\` tiles
+- Each tile can be in ~18 possible states (\`$\\log_2(131072) + 1 = 18$\`)
 
-**Upper bound on state space = 18¹⁶ ≈ 1.3 × 10²⁰ possible states**
+\`\`\`math
+\\text{Upper bound on state space} = 18^{16} \\approx 1.3 \\times 10^{20} \\text{ possible states}
+\`\`\`
 
 (But many of these are unreachable due to gameplay constraints.)
 
@@ -41,9 +45,9 @@ A: They are very differenent. Supervised learning is done by direct input and la
 
 We can, however, think about SL as a special case of a very constrained RRL, that there's only one learning step per episode, the reward is given immediately after the action, and we are just trying to predict the correct action for a given state like a label. 
 
-$$
-\\text{Input (state)} → \\text{Output (action/label)} → \\text{Immediate reward (correct or not})
-$$
+\`\`\`math
+\\text{Input (state)} \\rightarrow \\text{Output (action/label)} \\rightarrow \\text{Immediate reward (correct or not)}
+\`\`\`
 
 This basically collapses into supervised learning: given pairs of \`(state, correct action)\`, trying to make a function/policy for it. 
 
@@ -59,17 +63,17 @@ To most people, the field of ML consists of two broad problems: algorithm and da
 
 A common pitfall here is to think about those two fields as completely separate from each other, as algorithm people are supposed to create some "castle in the air", while the data people trying to fine tune it. Already, we need to amend the knowledge of those two fields. 
 
-$$
+\`\`\`math
 \\text{Algorithm v.s. Data} \\rightarrow \\text{Algorithm} \\times \\text{Data}
-$$
+\`\`\`
 
 But even outside of that, we are missing a crucial aspect of problem solving- it is to ask ourselves about an understanding of the **problem structure**.  
 
 So it's more like: 
 
-$$
+\`\`\`math
 \\text{Algorithm} \\times \\text{Data} \\times \\text{Problem Structure}
-$$
+\`\`\`
 
 People, in general, don't talk about this; but it's actually very important, and not many are putting an effort into exploring it, at least not as much as algorithm and data. Take this example: Blackjack and Go have very different MDPs as environmental setups. This means finding the optimal policy (or way to play the game) for those two games will look ***very*** different. 
 
