@@ -11,22 +11,7 @@ Currently, two official plugins are available:
 
 ---
 
-## Deployment
-
-This blog is automatically deployed to GitHub Pages. The deployment process is handled by GitHub Actions whenever changes are pushed to the main branch.
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. The built files will be in the `dist` directory, ready to be deployed.
-
-### Local Development
+## Local Development
 
 To run the project locally:
 
@@ -94,11 +79,6 @@ npm run dev
   - Double-check that you're using Node.js v16+ and have Git installed.
   - If you change the structure of your posts, update the script and utilities accordingly.
 
-- **Deployment Issues?**
-  - Check GitHub Actions tab in your repository for any build errors
-  - Ensure your repository name matches the `base` path in `vite.config.js`
-  - Verify that GitHub Pages is enabled in your repository settings
-
 ---
 
 ## Quick Reference
@@ -106,7 +86,6 @@ npm run dev
 - **Add or update a post:** Edit files in `src/posts/`
 - **Update post dates:** `npm run update-git-history`
 - **See your changes:** Restart the dev server if needed
-- **Deploy:** Push to main branch (automatic) or run `npm run build` for manual deployment
 
 ---
 
