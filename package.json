@@ -11,6 +11,7 @@
     "update-git-history": "node scripts/generate-git-history.js"
   },
   "dependencies": {
+    "katex": "^0.16.22",
     "marked": "^12.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

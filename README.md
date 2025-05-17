@@ -1,4 +1,119 @@
-# Im starting a wackass blog
+# Three Grains of Salt
+
+A minimalist blog built with React and Vite, featuring support for Markdown, LaTeX equations, and code snippets.
+
+## Writing Blog Posts
+
+Blog posts are stored as JavaScript files in the `src/posts` directory. Each post should export:
+- `title`: The post title
+- `date`: Publication date
+- `slug`: Unique identifier for the post URL
+- `content`: The post content in Markdown format
+
+### Formatting Guide
+
+#### Code Formatting
+
+1. **Inline Code**
+   ```markdown
+   Use single backticks for inline code: `console.log("Hello")`
+   ```
+
+2. **Code Blocks**
+   ````markdown
+   Use triple backticks with optional language name:
+   ```javascript
+   function hello() {
+       console.log("Hello, world!");
+   }
+   ```
+   ````
+
+#### LaTeX Math
+
+1. **Inline Math**
+   ```markdown
+   Use single dollar signs for inline equations: $E = mc^2$
+   ```
+
+2. **Block Math**
+   ````markdown
+   Use math code blocks for displayed equations:
+   ```math
+   \sum_{i=1}^n i = \frac{n(n+1)}{2}
+   ```
+   ````
+
+#### Other Markdown Features
+
+- **Headers**: Use `#` for different levels
+- **Lists**: Use `-` or `*` for bullet points
+- **Blockquotes**: Use `>` for quotes
+- **Links**: Use `[text](url)` format
+- **Bold**: Use `**text**`
+- **Italic**: Use `*text*`
+
+### Example Post
+
+```javascript
+export const title = "My Blog Post";
+export const date = "2024-03-19";
+export const slug = "my-blog-post";
+export const content = `
+# My Blog Post
+
+Here's some inline code: \`console.log("Hello")\`
+
+Here's a code block:
+\`\`\`javascript
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+\`\`\`
+
+Here's an inline equation: $E = mc^2$
+
+Here's a block equation:
+\`\`\`math
+\\sum_{i=1}^n i = \\frac{n(n+1)}{2}
+\`\`\`
+`;
+```
+
+## Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Styling
+
+The blog uses CSS variables for theming:
+- `--background-color`: Main background
+- `--text-body-color1`: Primary text color
+- `--text-body-color2`: Secondary text color
+- `--text-title-color1`: Primary title color
+- `--text-title-color2`: Secondary title color
+
+Styles for different elements are defined in:
+- `src/App.css`: Global styles and theme variables
+- `src/components/BlogPost.css`: Post-specific styles
+- `src/Home.css`: Homepage styles
+
+## Deployment
+
+The blog is configured for deployment on GitHub Pages. Push changes to the main branch to trigger automatic deployment.
 
 # React + Vite
 

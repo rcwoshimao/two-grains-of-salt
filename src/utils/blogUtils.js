@@ -1,4 +1,38 @@
 import { marked } from 'marked';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
+
+// Configure marked with KaTeX
+const renderer = {
+  code(code, language) {
+    if (language === 'math') {
+      try {
+        return katex.renderToString(code, {
+          throwOnError: false,
+          displayMode: true
+        });
+      } catch (err) {
+        return code;
+      }
+    }
+    return false; // Let marked handle other languages
+  },
+  codespan(code) {
+    if (code.startsWith('$') && code.endsWith('$')) {
+      try {
+        return katex.renderToString(code.slice(1, -1), {
+          throwOnError: false,
+          displayMode: false
+        });
+      } catch (err) {
+        return code;
+      }
+    }
+    return false; // Let marked handle regular inline code
+  }
+};
+
+marked.use({ renderer });
 
 // Import all blog posts
 const blogPosts = import.meta.glob('../posts/*.js', { eager: true });
@@ -24,8 +58,14 @@ export const getAllPosts = () => {
     .map(([filePath, post]) => {
       const fileName = filePath.split('/').pop();
       const dates = getPostDates(fileName);
+      const slug = fileName.replace('.js', '');
+      
+      // Handle both metadata formats
+      const metadata = post.metadata || {};
       return {
-        ...post.metadata,
+        title: metadata.title || post.title,
+        date: metadata.createdAt || post.date,
+        slug: metadata.slug || post.slug || slug,
         createdAt: dates.createdAt,
         updatedAt: dates.updatedAt
       };
@@ -35,16 +75,22 @@ export const getAllPosts = () => {
 
 export const getPostBySlug = (slug) => {
   const [filePath, post] = Object.entries(blogPosts).find(
-    ([_, post]) => post.metadata.slug === slug
+    ([_, post]) => {
+      const metadata = post.metadata || {};
+      return metadata.slug === slug || post.slug === slug;
+    }
   ) || [null, null];
   
   if (!post) return null;
   
   const fileName = filePath.split('/').pop();
   const dates = getPostDates(fileName);
+  const metadata = post.metadata || {};
   
   return {
-    ...post.metadata,
+    title: metadata.title || post.title,
+    date: metadata.createdAt || post.date,
+    slug: metadata.slug || post.slug || fileName.replace('.js', ''),
     createdAt: dates.createdAt,
     updatedAt: dates.updatedAt,
     content: marked(post.content)

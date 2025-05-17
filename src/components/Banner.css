@@ -1,0 +1,13 @@
+.banner {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  font-family: 'system-ui', sans-serif;
+  color: var(--text-body-color1);
+  margin: 0;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+} 

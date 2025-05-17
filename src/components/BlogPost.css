@@ -1,0 +1,137 @@
+.blog-post {
+  max-width: 900px;
+  margin: 0;
+  padding: 3rem 0.5rem 0.5rem;
+  text-align: left;
+}
+
+.post-content {
+  font-size: 0.8125rem;  /* 13px */
+  line-height: 1.6;
+  color: var(--text-body-color1);
+  text-align: left;
+}
+
+.post-content h1 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: var(--text-body-color1);
+  text-align: left;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--text-body-color1);
+  text-align: left;
+}
+
+.post-content h3 {
+  font-size: 1.2rem;
+  margin: 1.2rem 0 0.8rem;
+  color: var(--text-body-color1);
+  text-align: left;
+}
+
+.post-content p {
+  margin: 0 0 0.8rem;
+  text-align: left;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 0 0 0.8rem 1rem;
+  padding: 0;
+  text-align: left;
+}
+
+.post-content li {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 0.8125rem;  /* 13px */
+  line-height: 1.6;
+}
+
+/* Add spacing after lists when followed by paragraphs or other block elements */
+.post-content li + p,
+.post-content li + blockquote,
+.post-content li + h1,
+.post-content li + h2,
+.post-content li + h3 {
+  margin-top: 0.8rem;
+}
+
+/* Ensure consistent spacing for strong/bold text blocks */
+.post-content strong {
+  display: inline-block;
+  margin: 0.8rem 0;
+}
+
+.post-content blockquote {
+  border-left: 2px solid var(--text-body-color2);
+  margin: 1rem 0;
+  padding-left: 1rem;
+  color: var(--text-body-color2);
+  text-align: left;
+}
+
+/* Inline code */
+.post-content code:not(pre code) {
+  font-family: 'Fira Code', monospace;
+  background: rgba(171, 255, 234, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.8125rem;
+  color: var(--text-body-color1);
+}
+
+/* Code blocks */
+.post-content pre {
+  background: rgba(171, 255, 234, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.post-content pre code {
+  font-family: 'Fira Code', monospace;
+  background: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  color: var(--text-body-color1);
+}
+
+/* Inline LaTeX */
+.post-content .math.math-inline {
+  font-family: 'KaTeX', serif;
+  padding: 0 0.2rem;
+  color: var(--text-body-color1);
+}
+
+/* Block LaTeX */
+.post-content .math.math-display {
+  display: block;
+  font-family: 'KaTeX', serif;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  color: var(--text-body-color1);
+  overflow-x: auto;
+}
+
+.post-content a {
+  color: var(--text-body-color1);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--text-body-color1);
+}
+
+.post-content a:hover {
+  color: var(--text-body-color2);
+  border-bottom-color: var(--text-body-color2);
+}
+
+.post-meta {
+  text-align: left;
+  margin-bottom: 2rem;
+} 

@@ -1,20 +1,21 @@
 .home {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 900px;
+  padding: 3rem 0.5rem 0.5rem;
+  text-align: left;
 }
 
 .posts-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+
+  align-items: flex-start;
 }
 
 .post-preview {
-  padding: 1.5rem;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
+  padding: 0.8rem 0;
+  border: none;
+  width: 100%;
+  text-align: left;
 }
 
 .post-preview:hover {
@@ -22,21 +23,24 @@
 }
 
 .post-preview h2 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
 }
 
 .post-preview h2 a {
-  color: #333;
+  color: var(--text-body-color1);
   text-decoration: none;
+  border-bottom: 1px dashed var(--text-body-color1);
 }
 
 .post-preview h2 a:hover {
-  color: #666;
+  color: var(--text-body-color2);
+  border-bottom-color: var(--text-body-color2);
 }
 
 .post-meta {
   display: flex;
   gap: 1rem;
-  color: #666;
-  font-size: 0.9rem;
+  color: var(--text-body-color2);
+  font-size: 0.7rem;
 }

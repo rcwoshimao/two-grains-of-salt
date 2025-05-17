@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getAllPosts } from './utils/blogUtils';
+import Banner from './components/Banner';
 import './Home.css';
 
 function Home() {
@@ -7,7 +8,7 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>My Blog</h1>
+      <Banner />
       <div className="posts-list">
         {posts.map((post) => (
           <article key={post.slug} className="post-preview">
