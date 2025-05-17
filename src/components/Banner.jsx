@@ -8,7 +8,7 @@ function Banner() {
     <div className="banner">
       <div className="banner-left">
         <img src={rcLogo} alt="RC" className="banner-logo" />
-        <span className="banner-text">rc's site</span>
+        <span className="banner-text">Two grains of salt</span>
       </div>
       <ThemeToggle />
     </div>

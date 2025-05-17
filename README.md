@@ -1,4 +1,4 @@
-# Three Grains of Salt
+# Two Grains of Salt
 
 A minimalist blog built with React and Vite, featuring support for Markdown, LaTeX equations, and code snippets.
 

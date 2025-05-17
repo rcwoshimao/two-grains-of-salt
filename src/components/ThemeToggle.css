@@ -1,16 +1,17 @@
 .toggle-container {
-  width: 60px;
-  height: 30px;
+  width: 72px;
+  height: 36px;
   background-color: var(--bg-color2);
-  border-radius: 30px;
+  border-radius: 36px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 3px;
+  padding: 4px;
   border: 2px solid var(--text-body-color2);
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .toggle-container:hover {
@@ -19,25 +20,59 @@
 
 .toggle-container.light {
   justify-content: flex-start;
-  background-color: #ffd700;
-  border-color: #e6c200;
+  background-color: inherit; 
+  border-color: #090909;
+  border-width: 2px; 
 }
 
 .toggle-container.dark {
   justify-content: flex-end;
   background-color: #2c3e50;
-  border-color: #34495e;
+  border-color: #ffffff;
+  border-width: 2px; 
 }
 
 .toggle-handle {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   background-color: var(--text-body-color1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.toggle-handle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle-handle path {
+  stroke: var(--bg-color2);
+  stroke-width: 1.5;
+}
+
+/* Light theme specific styles */
+.light .toggle-handle {
+  background-color: #ffd700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+}
+
+.light .toggle-handle path {
+  stroke: #2c3e50;
+}
+
+/* Dark theme specific styles */
+.dark .toggle-handle {
+  background-color: #36e7de;
+  box-shadow: 0 0 12px rgba(241, 196, 15, 0.3);
+}
+
+.dark .toggle-handle path {
+  stroke: #2c3e50;
 }
 
 .toggle-icon {

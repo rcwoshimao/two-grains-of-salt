@@ -1,7 +1,7 @@
 .banner {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: normal;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   text-align: left;
   background: transparent;
   font-family: monospace;
@@ -20,16 +20,16 @@
 .banner-left {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .banner-logo {
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
   object-fit: contain;
 }
 
 .banner-text {
   line-height: 1;
-  font-size: 13px;
+  font-size: 16px;
 } 
