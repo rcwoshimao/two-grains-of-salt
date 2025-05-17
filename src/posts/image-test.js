@@ -1,0 +1,29 @@
+export const title = "Testing Image Embedding";
+export const date = "2024-03-21";
+export const slug = "image-test";
+export const content = `# Testing Image Embedding
+
+You can embed images in your blog posts in two ways:
+
+### 1. Local Images
+
+Here's an example using a local image from your assets directory:
+
+![RC Logo](rc.PNG "My personal logo")
+
+### 2. External Images
+
+You can also embed images from external URLs:
+
+![Sample External Image](https://picsum.photos/800/400 "A beautiful random image from Lorem Picsum")
+
+### Image Styling Features
+
+Images in your blog posts will have:
+- Responsive sizing
+- Rounded corners
+- Proper spacing
+- Optional captions
+- Dark/light theme compatibility
+
+> **💡 Tip**: Store frequently used images in the \`src/assets/\` directory for better performance and reliability.`; 

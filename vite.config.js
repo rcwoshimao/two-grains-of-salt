@@ -8,5 +8,6 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets'
-  }
+  },
+  assetsInclude: ['**/*.PNG', '**/*.png']  // Add support for PNG files
 })

@@ -7,12 +7,21 @@
 }
 
 :root {
+  /* Dark theme (default) */
   --background-color: #09202c;
-  --background-emphasis-color: # ;
   --text-body-color1: #abffea;
   --text-body-color2: #f5b1cc; 
   --text-title-color1: #a288d9; 
-  --text-title-color2: #ff248a; 
+  --text-title-color2: #ff248a;
+}
+
+:root[data-theme="light"] {
+  /* Light theme */
+  --background-color: #ffffff;
+  --text-body-color1: #2c3e50;
+  --text-body-color2: #e74c3c;
+  --text-title-color1: #8e44ad;
+  --text-title-color2: #c0392b;
 }
 
 html, body {
@@ -27,6 +36,7 @@ body {
   color: var(--text-body-color1);
   font-family: monospace;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root > div {
@@ -39,12 +49,12 @@ h1 {
   font-size: 20px; 
 }
 
-h2{
+h2 {
   color: var(--text-body-color2);
   font-size: 15px; 
 }
 
-p{
+p {
   color: var(--text-body-color1); 
   font-size: 13px; 
 }

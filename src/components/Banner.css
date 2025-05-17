@@ -1,13 +1,50 @@
 .banner {
   font-size: 1rem;
   font-weight: normal;
-  padding: 0;
+  padding: 0.5rem 1rem;
   text-align: left;
   background: transparent;
-  font-family: 'system-ui', sans-serif;
+  font-family: monospace;
   color: var(--text-body-color1);
   margin: 0;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.banner-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.banner-text {
+  line-height: 1;
+  font-size: 13px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 16px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  color: var(--text-body-color1);
+}
+
+.theme-toggle:hover {
+  opacity: 1;
 } 

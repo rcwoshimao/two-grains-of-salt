@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getPostBySlug } from '../utils/blogUtils';
 import './BlogPost.css';
 
@@ -12,6 +12,7 @@ function BlogPost() {
 
   return (
     <article className="blog-post">
+      <Link to="/" className="back-link">← Back</Link>
       <div 
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.content }}
@@ -21,7 +22,6 @@ function BlogPost() {
         <span>Updated: {new Date(post.updatedAt).toLocaleDateString()}</span>
       </div>
     </article>
-
   );
 }
 

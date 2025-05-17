@@ -1,13 +1,12 @@
 .home {
   max-width: 900px;
-  padding: 3rem 0.5rem 0.5rem;
+  padding: 4rem 0.5rem 0.5rem;
   text-align: left;
 }
 
 .posts-list {
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
 }
 
