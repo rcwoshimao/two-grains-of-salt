@@ -1,10 +1,23 @@
 .questions-container {
   max-width: 600px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 4rem 0.5rem 0.5rem;
   background-color: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-body-color2);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.back-link:hover {
+  border-bottom: 1px solid var(--text-body-color2);
 }
 
 .questions-container h2 {
