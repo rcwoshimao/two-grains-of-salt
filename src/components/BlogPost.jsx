@@ -13,6 +13,18 @@ function BlogPost() {
   return (
     <article className="blog-post">
       <Link to="/" className="back-link">← Back</Link>
+      {post.tags && post.tags.length > 0 && (
+        <div className="post-tags">
+          {post.tags.map(tag => (
+            <span 
+              key={tag} 
+              className="tag"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
       <div 
         className="post-content"
         dangerouslySetInnerHTML={{ __html: post.content }}

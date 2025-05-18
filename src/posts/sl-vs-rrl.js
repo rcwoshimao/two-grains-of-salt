@@ -2,6 +2,7 @@ export const title = "Supervised learning v.s. RRL: the difference";
 export const date = "2024-03-19";
 export const slug = "sl-vs-rrl";
 export const summary = "Everything can be anything.";
+export const tags = ["Tech/Reinforcement Learning"];
 export const content = `# Supervised learning v.s. RRL: the difference
 
 Q: Both SL and RRL are trained based on some input, learning the patterns, and giving an output. So what is the difference? 
