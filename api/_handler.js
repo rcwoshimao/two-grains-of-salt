@@ -7,7 +7,7 @@ const supabase = createClient(
 );
 
 export default async function handler(request) {
-  // Handle CORS preflight requests
+  // Handle CORS
   if (request.method === 'OPTIONS') {
     return new Response(null, {
       headers: {
@@ -18,15 +18,14 @@ export default async function handler(request) {
     });
   }
 
-  // Only allow POST requests
   if (request.method !== 'POST') {
-    return new Response(
-      JSON.stringify({ error: 'Method not allowed' }), 
-      { 
-        status: 405,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   }
 
   try {
@@ -35,23 +34,23 @@ export default async function handler(request) {
 
     // Validate inputs
     if (!question || question.trim().length === 0) {
-      return new Response(
-        JSON.stringify({ error: 'Question is required' }), 
-        { 
-          status: 400,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
+      return new Response(JSON.stringify({ error: 'Question is required' }), {
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
     }
 
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return new Response(
-        JSON.stringify({ error: 'Invalid email format' }), 
-        { 
-          status: 400,
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
+      return new Response(JSON.stringify({ error: 'Invalid email format' }), {
+        status: 400,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
     }
 
     // Sanitize the question content
@@ -74,24 +73,21 @@ export default async function handler(request) {
 
     if (error) throw error;
 
-    return new Response(
-      JSON.stringify({ message: 'Question submitted successfully' }), 
-      { 
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
-      }
-    );
+    return new Response(JSON.stringify({ message: 'Question submitted successfully' }), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   } catch (error) {
     console.error('Error processing question:', error);
-    return new Response(
-      JSON.stringify({ error: 'Internal server error' }), 
-      { 
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
+    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   }
 } 

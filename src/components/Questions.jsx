@@ -11,7 +11,7 @@ function Questions() {
     console.log('Submitting question:', { question, email });
     
     try {
-      const response = await fetch('https://two-grains-of-salt-git-main-rcwoshimaos-projects.vercel.app/api/submit-question', {
+      const response = await fetch('/api/submit-question', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

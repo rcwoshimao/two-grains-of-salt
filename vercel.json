@@ -1,9 +1,12 @@
 {
-  "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/submit-question",
-      "dest": "/api/submit-question.js"
+      "source": "/api/(.*)",
+      "destination": "/api/_handler"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 } 
