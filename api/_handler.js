@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js';
-import 'dotenv/config';
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
@@ -12,76 +11,92 @@ if (!supabaseUrl || !supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default async function handler(request) {
-  console.log('API Handler called:', {
-    method: request.method,
-    url: request.url,
-    headers: Object.fromEntries(request.headers.entries())
-  });
+  // Set default CORS headers
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
 
-  // Handle CORS
+  // Handle preflight requests
   if (request.method === 'OPTIONS') {
-    console.log('Handling OPTIONS request');
     return new Response(null, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      },
+      headers: corsHeaders,
     });
   }
 
+  // Only allow POST requests
   if (request.method !== 'POST') {
-    console.log('Method not allowed:', request.method);
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
+    return new Response(
+      JSON.stringify({ error: 'Method not allowed' }),
+      {
+        status: 405,
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders,
+        },
+      }
+    );
   }
 
   try {
-    const body = await request.json();
-    console.log('Received request body:', body);
+    // Parse request body
+    let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid JSON in request body' }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
+    }
 
     const { question, email, timestamp } = body;
 
-    // Validate inputs
+    // Validate required fields
     if (!question || question.trim().length === 0) {
-      console.log('Question required validation failed');
-      return new Response(JSON.stringify({ error: 'Question is required' }), {
-        status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      });
+      return new Response(
+        JSON.stringify({ error: 'Question is required' }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
     }
 
+    // Validate email format if provided
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      console.log('Email validation failed:', email);
-      return new Response(JSON.stringify({ error: 'Invalid email format' }), {
-        status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      });
+      return new Response(
+        JSON.stringify({ error: 'Invalid email format' }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
     }
 
-    // Sanitize the question content
+    // Sanitize question content
     const sanitizedQuestion = question
       .replace(/<[^>]*>/g, '')
       .slice(0, 1000)
       .replace(/[<>]/g, '');
-    
-    console.log('Attempting Supabase insert with:', {
-      content: sanitizedQuestion,
-      email: email || null,
-      timestamp,
-      status: 'pending'
-    });
+
+    // Check Supabase connection
+    if (!supabase) {
+      throw new Error('Database connection not initialized');
+    }
 
     // Store in Supabase
     const { data, error: supabaseError } = await supabase
@@ -90,36 +105,46 @@ export default async function handler(request) {
         {
           content: sanitizedQuestion,
           email: email || null,
-          timestamp,
+          timestamp: timestamp || new Date().toISOString(),
           status: 'pending'
         }
       ]);
 
     if (supabaseError) {
       console.error('Supabase error:', supabaseError);
-      throw supabaseError;
+      throw new Error('Database error: ' + supabaseError.message);
     }
 
-    console.log('Successfully stored question');
-    return new Response(JSON.stringify({ message: 'Question submitted successfully' }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
+    // Return success response
+    return new Response(
+      JSON.stringify({ 
+        message: 'Question submitted successfully',
+        data: data 
+      }),
+      {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders,
+        },
+      }
+    );
   } catch (error) {
-    console.error('Detailed error:', {
-      message: error.message,
-      stack: error.stack,
-      error
-    });
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
+    console.error('API error:', error);
+    
+    // Return error response
+    return new Response(
+      JSON.stringify({ 
+        error: 'Internal server error',
+        message: error.message 
+      }),
+      {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders,
+        },
+      }
+    );
   }
 } 

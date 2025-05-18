@@ -2,11 +2,12 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/_handler"
+      "destination": "/api/$1"
     },
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "version": 2
 } 
