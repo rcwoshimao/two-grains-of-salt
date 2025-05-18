@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Language is a Futile Device",
-  slug: "thoughts-on-language"
+  slug: "thoughts-on-language",
+  hidden: true
 };
 
 export const content = `

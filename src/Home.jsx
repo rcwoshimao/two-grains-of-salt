@@ -15,6 +15,9 @@ function Home() {
             <h2>
               <Link to={`/post/${post.slug}`}>{post.title}</Link>
             </h2>
+            {post.summary? (
+              <h4 className='post-summary'> {post.summary} </h4>
+            ): null}
             <div className="post-meta">
               <span>Created: {new Date(post.createdAt).toLocaleDateString()}</span>
               <span>Updated: {new Date(post.updatedAt).toLocaleDateString()}</span>

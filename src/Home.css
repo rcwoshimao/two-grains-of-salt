@@ -43,3 +43,10 @@
   color: var(--text-body-color2);
   font-size: 0.7rem;
 }
+
+
+.post-summary {
+  color: var(--text-title-color2);
+  font-style: italic;
+  margin: 0px 0px 0.5rem 0px;
+}

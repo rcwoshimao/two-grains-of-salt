@@ -1,6 +1,7 @@
 export const title = "Testing Image Embedding";
 export const date = "2024-03-21";
 export const slug = "image-test";
+export const hidden = true;
 export const content = `# Testing Image Embedding
 
 You can embed images in your blog posts in two ways:

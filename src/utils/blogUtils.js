@@ -89,9 +89,12 @@ export const getAllPosts = () => {
         date: metadata.createdAt || post.date,
         slug: metadata.slug || post.slug || slug,
         createdAt: dates.createdAt,
-        updatedAt: dates.updatedAt
+        updatedAt: dates.updatedAt,
+        hidden: metadata.hidden || post.hidden || false,
+        summary: metadata.summary || post.summary
       };
     })
+    .filter(post => !post.hidden)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 };
 

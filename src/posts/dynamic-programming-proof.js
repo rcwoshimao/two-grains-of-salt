@@ -1,6 +1,7 @@
 export const title = "The Math Behind Dynamic Programming: Fibonacci Sequence";
 export const date = "2024-03-21";
 export const slug = "dynamic-programming-proof";
+export const hidden = true;
 export const content = `# The Math Behind Dynamic Programming: Fibonacci Sequence
 
 Have you ever wondered why dynamic programming solutions are correct? Let's explore this through everyone's favorite sequence: Fibonacci numbers!

@@ -1,6 +1,7 @@
 export const title = "Comparing RRL methods and adversarial search methods: game examples";
 export const date = "2024-03-19";
 export const slug = "rrl-vs-adversarial";
+export const summary = "Miniature example to show the importance of understanding Problem Structure.";
 export const content = `# Comparing RRL methods and adversarial search methods: game examples
 
 ### Why don't we use RRL to play 2048?
