@@ -1,35 +1,50 @@
 .banner {
-  font-size: 1.2rem;
-  font-weight: normal;
-  padding: 0.6rem 1.2rem;
-  text-align: left;
-  background: transparent;
-  font-family: monospace;
-  color: var(--text-body-color1);
-  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--background-color);
   z-index: 1000;
 }
 
 .banner-left {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 1rem;
 }
 
 .banner-logo {
-  width: 29px;
-  height: 29px;
-  object-fit: contain;
+  height: 30px;
+  width: auto;
 }
 
 .banner-text {
-  line-height: 1;
-  font-size: 16px;
+  color: var(--text-body-color1);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.banner-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.questions-link {
+  color: var(--text-body-color2);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-body-color2);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.questions-link:hover {
+  background-color: var(--text-body-color2);
+  color: var(--background-color);
 } 
