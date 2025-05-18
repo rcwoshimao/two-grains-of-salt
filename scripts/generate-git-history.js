@@ -8,6 +8,19 @@ const __dirname = path.dirname(__filename);
 
 const POSTS_DIR = path.join(__dirname, '../src/posts');
 
+function getStaticDate(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const dateMatch = content.match(/export const date = ["'](.+?)["']/);
+    if (dateMatch) {
+      return new Date(dateMatch[1]).toISOString();
+    }
+  } catch (error) {
+    console.warn(`Could not read static date from ${filePath}:`, error);
+  }
+  return null;
+}
+
 function getGitDates(filePath) {
   try {
     // Get creation date (first commit)
@@ -28,6 +41,15 @@ function getGitDates(filePath) {
     };
   } catch (error) {
     console.warn(`Could not get Git dates for ${filePath}:`, error);
+    // Try to get the static date from the file
+    const staticDate = getStaticDate(filePath);
+    if (staticDate) {
+      return {
+        createdAt: staticDate,
+        updatedAt: staticDate
+      };
+    }
+    // If all else fails, use current date
     const now = new Date().toISOString();
     return {
       createdAt: now,
