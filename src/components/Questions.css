@@ -75,6 +75,11 @@ button:hover {
   margin-bottom: 1.5rem;
 }
 
-.success-message button {
-  background-color: var(--text-body-color2);
+.error-message {
+  color: #e53e3e;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #fff5f5;
+  margin-bottom: 1rem;
 } 

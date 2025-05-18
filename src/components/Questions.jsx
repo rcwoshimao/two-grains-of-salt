@@ -1,58 +1,45 @@
 import { useState } from 'react';
+import { supabase } from '../lib/supabase';
 import './Questions.css';
 
 function Questions() {
   const [question, setQuestion] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting question:', { question, email });
+    setError('');
     
     try {
-      console.log('Making request to:', '/api/_handler');
-      const response = await fetch('/api/_handler', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          question,
-          email,
-          timestamp: new Date().toISOString()
-        })
-      });
+      const { data, error: supabaseError } = await supabase
+        .from('questions')
+        .insert([
+          {
+            content: question,
+            email: email || null,
+            timestamp: new Date().toISOString(),
+            status: 'pending'
+          }
+        ]);
 
-      console.log('Response:', {
-        status: response.status,
-        statusText: response.statusText,
-        headers: Object.fromEntries(response.headers.entries())
-      });
-
-      const data = await response.json();
-      console.log('Response data:', data);
-
-      if (response.ok) {
-        setSubmitted(true);
-        setQuestion('');
-        setEmail('');
-      } else {
-        throw new Error(data.error || 'Failed to submit question');
+      if (supabaseError) {
+        throw supabaseError;
       }
+
+      setSubmitted(true);
+      setQuestion('');
+      setEmail('');
     } catch (error) {
-      console.error('Detailed error:', {
-        message: error.message,
-        stack: error.stack,
-        error
-      });
-      alert(error.message || 'Failed to submit question. Please try again later.');
+      console.error('Error submitting question:', error);
+      setError('Failed to submit question. Please try again later.');
     }
   };
 
   return (
     <div className="questions-container">
-      <h2>Ask Me a Question, and I will try my best to answer according to my constantly-imploving understanding of the world! </h2>
+      <h2>Ask Me a Question, and I will try my best to answer according to my constantly-improving understanding of the world! </h2>
       {submitted ? (
         <div className="success-message">
           <p>Thank you for your question! I'll review it and may feature it in a future post.</p>
@@ -81,6 +68,7 @@ function Questions() {
               placeholder="To receive a notification when your question is answered"
             />
           </div>
+          {error && <div className="error-message">{error}</div>}
           <button type="submit">Submit Question</button>
         </form>
       )}
