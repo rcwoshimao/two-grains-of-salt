@@ -11,7 +11,8 @@ function Questions() {
     console.log('Submitting question:', { question, email });
     
     try {
-      const response = await fetch('/api/submit-question', {
+      console.log('Making request to:', '/api/_handler');
+      const response = await fetch('/api/_handler', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +24,12 @@ function Questions() {
         })
       });
 
-      console.log('Response status:', response.status);
+      console.log('Response:', {
+        status: response.status,
+        statusText: response.statusText,
+        headers: Object.fromEntries(response.headers.entries())
+      });
+
       const data = await response.json();
       console.log('Response data:', data);
 
@@ -35,7 +41,11 @@ function Questions() {
         throw new Error(data.error || 'Failed to submit question');
       }
     } catch (error) {
-      console.error('Error submitting question:', error);
+      console.error('Detailed error:', {
+        message: error.message,
+        stack: error.stack,
+        error
+      });
       alert(error.message || 'Failed to submit question. Please try again later.');
     }
   };

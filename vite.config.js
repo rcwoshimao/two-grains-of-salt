@@ -9,5 +9,13 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets'
   },
-  assetsInclude: ['**/*.PNG', '**/*.png']  // Add support for PNG files
+  assetsInclude: ['**/*.PNG', '**/*.png'],  // Add support for PNG files
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
+  }
 })
