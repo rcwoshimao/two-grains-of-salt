@@ -1,6 +1,7 @@
 export const metadata = {
+  id: "a1b2c3d4-e5f6-4a5b-8c7d-9e8f7a6b5c4d",
   title: "Language is a Futile Device",
-  slug: "thoughts-on-language",
+  tags: ["Life/Philosophy"],
   hidden: true
 };
 

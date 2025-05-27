@@ -1,6 +1,12 @@
+export const metadata = {
+  id: "b2c3d4e5-f6a7-4b5c-8d9e-0f1a2b3c4d5e",
+  title: "Testing Image Embedding",
+  tags: ["Tech/Development"],
+  summary: "A guide to embedding images in blog posts."
+};
+
 export const title = "Testing Image Embedding";
 export const date = "2024-03-21";
-export const slug = "image-test";
 export const hidden = true;
 export const content = `# Testing Image Embedding
 

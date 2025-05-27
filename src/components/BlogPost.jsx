@@ -1,10 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
-import { getPostBySlug } from '../utils/blogUtils';
+import { getPostById, getPostBySlug } from '../utils/blogUtils';
 import './BlogPost.css';
 
 function BlogPost() {
-  const { slug } = useParams();
-  const post = getPostBySlug(slug);
+  const { id, slug } = useParams();
+  const post = id ? getPostById(id) : getPostBySlug(slug);
 
   if (!post) {
     return <div>Post not found</div>;

@@ -1,4 +1,5 @@
 export const metadata = {
+  id: "123e4567-e89b-12d3-a456-426614174000",
   title: "Picking the Right Values",
   slug: "picking-the-right-values",
   tags: ["Life/Philosophy"],

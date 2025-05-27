@@ -1,5 +1,6 @@
 import { marked } from 'marked';
 import katex from 'katex';
+import { v4 as uuidv4 } from 'uuid';
 import 'katex/dist/katex.min.css';
 
 // Configure marked with KaTeX and image handling
@@ -38,14 +39,17 @@ const renderer = {
       }
 
       // For local images, first try post-specific directory
-      const postSlug = window.location.pathname.split('/').pop();
-      try {
-        const postSpecificImg = new URL(`../assets/posts/${postSlug}/${href}`, import.meta.url).href;
-        return `<img src="${postSpecificImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
-      } catch {
-        // If not found in post directory, try common assets
-        const commonImg = new URL(`../assets/${href}`, import.meta.url).href;
-        return `<img src="${commonImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
+      const postId = window.location.pathname.split('/').pop();
+      const post = getPostById(postId) || getPostBySlug(postId);
+      if (post) {
+        try {
+          const postSpecificImg = new URL(`../assets/posts/${post.slug}/${href}`, import.meta.url).href;
+          return `<img src="${postSpecificImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
+        } catch {
+          // If not found in post directory, try common assets
+          const commonImg = new URL(`../assets/${href}`, import.meta.url).href;
+          return `<img src="${commonImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
+        }
       }
     } catch (err) {
       console.warn('Failed to load image:', href);
@@ -75,6 +79,17 @@ const getPostDates = (fileName) => {
   };
 };
 
+// Function to ensure post has an ID
+const ensurePostId = (post, fileName) => {
+  const metadata = post.metadata || {};
+  if (!metadata.id) {
+    // Generate a new UUID for posts without one
+    metadata.id = uuidv4();
+    console.warn(`Post ${fileName} is missing an ID. Generated new ID: ${metadata.id}`);
+  }
+  return metadata;
+};
+
 export const getAllPosts = () => {
   return Object.entries(blogPosts)
     .map(([filePath, post]) => {
@@ -83,8 +98,9 @@ export const getAllPosts = () => {
       const slug = fileName.replace('.js', '');
       
       // Handle both metadata formats
-      const metadata = post.metadata || {};
+      const metadata = ensurePostId(post, fileName);
       return {
+        id: metadata.id,
         title: metadata.title || post.title,
         date: metadata.createdAt || post.date,
         slug: metadata.slug || post.slug || slug,
@@ -99,6 +115,33 @@ export const getAllPosts = () => {
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 };
 
+export const getPostById = (id) => {
+  const [filePath, post] = Object.entries(blogPosts).find(
+    ([_, post]) => {
+      const metadata = post.metadata || {};
+      return metadata.id === id;
+    }
+  ) || [null, null];
+  
+  if (!post) return null;
+  
+  const fileName = filePath.split('/').pop();
+  const dates = getPostDates(fileName);
+  const metadata = ensurePostId(post, fileName);
+  
+  return {
+    id: metadata.id,
+    title: metadata.title || post.title,
+    date: metadata.createdAt || post.date,
+    slug: metadata.slug || post.slug || fileName.replace('.js', ''),
+    createdAt: dates.createdAt,
+    updatedAt: dates.updatedAt,
+    content: marked(post.content),
+    tags: metadata.tags || post.tags || []
+  };
+};
+
+// Keep getPostBySlug for backward compatibility
 export const getPostBySlug = (slug) => {
   const [filePath, post] = Object.entries(blogPosts).find(
     ([_, post]) => {
@@ -111,9 +154,10 @@ export const getPostBySlug = (slug) => {
   
   const fileName = filePath.split('/').pop();
   const dates = getPostDates(fileName);
-  const metadata = post.metadata || {};
+  const metadata = ensurePostId(post, fileName);
   
   return {
+    id: metadata.id,
     title: metadata.title || post.title,
     date: metadata.createdAt || post.date,
     slug: metadata.slug || post.slug || fileName.replace('.js', ''),

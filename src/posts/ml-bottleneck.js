@@ -1,8 +1,13 @@
+export const metadata = {
+  id: "550e8400-e29b-41d4-a716-446655440000",
+  title: "Understanding the actual reason for current bottleneck in ML problem solving",
+  summary: "Understand the problem before solving it!",
+  tags: ["Tech/Reinforcement Learning"]
+};
+
 export const title = "Understanding the actual reason for current bottleneck in ML problem solving";
 export const date = "2024-03-19";
-export const slug = "ml-bottleneck";
 export const tags = ["Tech/Reinforcement Learning"];
-export const summary = "Understand the problem before solving it! "
 export const content = `# Understanding the actual reason for current bottleneck in ML problem solving
 
 To most people, the field of ML consists of two broad problems: algorithm and data. The algorithm side requires a good understanding of the problem we are trying to solve, and data side is currently facing a problem: big companies have exhausted all data sources on the internet(some purposed the solution of generating synthetic data), but we don't know if products are getting better. We are facing a bottleneck— it's like there's nothing more we can do, other than waiting for more data to be made. 

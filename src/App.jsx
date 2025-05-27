@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Home from './Home';
 import BlogPost from './components/BlogPost';
 import Questions from './components/Questions';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -18,9 +19,11 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/post/:slug" element={<BlogPost />} />
+        <Route path="/post/:id" element={<BlogPost />} />
+        <Route path="/post/slug/:slug" element={<BlogPost />} />
         <Route path="/questions" element={<Questions />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
