@@ -2,7 +2,7 @@ export const metadata = {
   title: "Picking the Right Values",
   slug: "picking-the-right-values",
   tags: ["Life/Philosophy"],
-  summary: "A thoughtful exploration of values and their impact on our lives.",
+  summary: "Some thoughts on values and their impact on our lives.",
   date: "2024-03-21"
 };
 
@@ -18,6 +18,7 @@ My life mentor Dr. Chase always said: "Do not fixate on things you cannot contro
 > Honesty is a good value because it's something you have complete control over, it reflects reality, and it benefits others (even if it's sometimes unpleasant). Popularity, on the other hand, is a bad value. If that's your value, and if your metric is being the most popular guy/girl at the dance party, much of what happens will be out of your control: you don't know who else will be at the event, and you probably won't know who half those people are.  
 This value/metric isn't based on reality: you may feel popular or unpopular, when in fact you have no fucking clue what anybody else really thinks about you. (Side Note: As a rule, people who are terrified of what others think about them are actually terrified of all the shitty things they think about themselves being reflected back at them.)
 
+If we think about this in terms of RRL, we can see that the most important thing isnt to go with one single policy, brutally push through it and find the "best value", but to constantly update our policy so that the way we evaluate our life is better and better. Afterall, having an improving policy is for sure much more beneficial in the long term than having a fake good score on a shit policy. 
 
-If we think about this in terms of RRL, we can see that the most important thing isnt to go with one single policy, brutally push through it and find the "best value", but to constantly update our policy so that the way we evaluate our life is better and better. Afterall, having a good policy is for sure much more beneficial in the long term than having a fake good score on a shit policy. 
+(I wrote this at 1 am. It might just come back and haunt me in the future.)
 `;
