@@ -2,7 +2,8 @@ export const metadata = {
   title: "Master Your Own Kingdom - Guy Ritchie & Joe Rogan",
   slug: "master-your-own-kingdom",
   tags: ["Life/Philosophy"],
-  summary: "A conversation between Joe Rogan and Guy Ritchie about owning your path, storytelling, and the battle between internal truth and external validation."
+  summary: "A conversation between Joe Rogan and Guy Ritchie about owning your path, storytelling, and the battle between internal truth and external validation.",
+  date: "2024-05-18"
 };
 
 export const content = `
