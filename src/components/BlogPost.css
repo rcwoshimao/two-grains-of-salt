@@ -1,7 +1,12 @@
+.blog-post-container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
 .blog-post {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 0.5rem 0.5rem;
+  padding: calc(var(--banner-height) + 1rem) 0.5rem 0.5rem;
   text-align: left;
   padding-bottom: 200px; 
 }
