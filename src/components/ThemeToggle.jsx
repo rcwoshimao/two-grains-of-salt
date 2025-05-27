@@ -7,13 +7,11 @@ const moonPath = "M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.
 
 function ThemeToggle() {
   const [isLight, setIsLight] = useState(() => {
-    // Initialize from localStorage, default to dark theme
     const saved = localStorage.getItem("theme");
     return saved === "light";
   });
 
   useEffect(() => {
-    // Update the data-theme attribute on root element
     const theme = isLight ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);

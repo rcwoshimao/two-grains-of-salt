@@ -1,10 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import Home from './Home';
 import BlogPost from './components/BlogPost';
 import Questions from './components/Questions';
 import './App.css';
 
 function App() {
+  // Initialize theme on app load
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  }, []);
+
   return (
     <div className="app">
       <Routes>
