@@ -12,11 +12,14 @@ There is a chapter in this one book called **["The Subtle Art of Not Giving a F*
 
 My life mentor Dr. Chase always said: "Do not fixate on things you cannot control. Instead, focus on the things you can change, regardless of how small that is". It sounds a bit pessimistic at first glance, but it boils down to knowing that there's no reason to brute force an nonexistent solution, while there's something far better to do. There are many things we cannot control; in fact, we cannot control MOST things. This realization is daunting at first, but after we've done weeping for the inevitable, we can always stand up and try to find improvement. This quite correlates to the values we pick. We can either chose to always and always compare ourselves to others and make ourselves miserable (Like Dave, I genuinely wish he is happy now though I do not listen to his music), because we cannot control how successful others are; or, we can chose to evaluate what truly matters, focuing on our own growth and inner happiness disregarding what the outside world deems as successful. (This inner happiness doesn't HAVE to be innovative and different from what the others think it is; at the same time, it also doesn't have to be the same.) 
 
+
 > Good values are 1) reality-based, 2) socially constructive, and 3) immediate and controllable.  
 > Bad values are 1) superstitious, 2) socially destructive, and 3) not immediate or controllable.  
 >
 > Honesty is a good value because it's something you have complete control over, it reflects reality, and it benefits others (even if it's sometimes unpleasant). Popularity, on the other hand, is a bad value. If that's your value, and if your metric is being the most popular guy/girl at the dance party, much of what happens will be out of your control: you don't know who else will be at the event, and you probably won't know who half those people are.  
-This value/metric isn't based on reality: you may feel popular or unpopular, when in fact you have no fucking clue what anybody else really thinks about you. (Side Note: As a rule, people who are terrified of what others think about them are actually terrified of all the shitty things they think about themselves being reflected back at them.)
+> This value/metric isn't based on reality: you may feel popular or unpopular, when in fact you have no fucking clue what anybody else really thinks about you. (Side Note: As a rule, people who are terrified of what others think about them are actually terrified of all the shitty things they think about themselves being reflected back at them.)
+>
+> <u> ***— Mark Manson, "The Subtle Art of Not Giving a F*ck"***</u> 
 
 If we think about this in terms of RRL, we can see that the most important thing isnt to go with one single policy, brutally push through it and find the "best value", but to constantly update our policy so that the way we evaluate our life is better and better. Afterall, having an improving policy is for sure much more beneficial in the long term than having a fake good score on a shit policy. 
 
