@@ -1,5 +1,4 @@
 export const metadata = {
-  id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
   title: "Master Your Own Kingdom - Guy Ritchie & Joe Rogan",
   tags: ["Life/Philosophy"],
   summary: "A conversation between Joe Rogan and Guy Ritchie about owning your path, storytelling, and the battle between internal truth and external validation.",

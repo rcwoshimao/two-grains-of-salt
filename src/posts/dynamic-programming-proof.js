@@ -1,5 +1,4 @@
 export const metadata = {
-  id: "c3d4e5f6-a7b8-4c5d-8e9f-0a1b2c3d4e5f",
   title: "The Math Behind Dynamic Programming: Fibonacci Sequence",
   tags: ["Tech/Development"],
   summary: "A proof of the dynamic programming solution for the maximum subarray problem."

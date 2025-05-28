@@ -1,5 +1,4 @@
 export const metadata = {
-  id: "7c9e6679-7425-40de-944b-e07fc1f90ae7",
   title: "Comparing RRL methods and adversarial search methods: game examples",
   tags: ["Tech/Reinforcement Learning"],
   summary: "Understanding problem structure in reinforcement learning."

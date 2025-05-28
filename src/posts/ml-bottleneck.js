@@ -1,5 +1,4 @@
 export const metadata = {
-  id: "550e8400-e29b-41d4-a716-446655440000",
   title: "Understanding the actual reason for current bottleneck in ML problem solving",
   summary: "Understand the problem before solving it!",
   tags: ["Tech/Reinforcement Learning"]

@@ -82,10 +82,12 @@ const getPostDates = (fileName) => {
 // Function to ensure post has an ID
 const ensurePostId = (post, fileName) => {
   const metadata = post.metadata || {};
+  const slug = fileName.replace('.js', '');
+  
+  // Generate a consistent UUID based on the slug
   if (!metadata.id) {
-    // Generate a new UUID for posts without one
-    metadata.id = uuidv4();
-    console.warn(`Post ${fileName} is missing an ID. Generated new ID: ${metadata.id}`);
+    // Use the slug to generate a deterministic UUID
+    metadata.id = uuidv4({ namespace: '6ba7b810-9dad-11d1-80b4-00c04fd430c8', name: slug });
   }
   return metadata;
 };

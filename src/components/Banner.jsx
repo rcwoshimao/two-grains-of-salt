@@ -9,7 +9,8 @@ function Banner() {
     <div className="banner">
       <div className="banner-left">
         <img src={rcLogo} alt="RC" className="banner-logo" />
-        <span className="banner-text">Two grains of salt</span>
+        <Link to="/" className="banner-text" style={{ textDecoration: 'none' }} >Two grains of salt</Link>
+        {/*<span className="banner-text">Two grains of salt</span>*/}
       </div>
       <div className="banner-right">
         <Link to="/questions" className="questions-link">Questions?</Link>
