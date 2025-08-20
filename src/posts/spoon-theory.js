@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export const content = `
-# Template Post
+# The Spoon theory, and how we plan our days
 
 ## 
 On wedesnday afternoon of the last week of my summer internship, I found myself rotting on my bed and playing gatcha game, seeing my time slowly slipping away. While I enjoy the conept of some me-time and simple rest, after a while, I cannot help but feel bored. Then it comes the realization that I have somewhat been low on motivation. 
@@ -16,51 +16,20 @@ So I did what I always do when I am confused about certain mentalities I have. I
 
 A couple of comments down, I found an interesting article. 
 https://www.butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/
-The author of the story was diagnosed with a rare autoimmune disease, and as her college friend asked her what it "feels" like to have it, she came up with this brilliant metaphor- the spoon theory. 
+The author, Christine, was diagnosed with a rare autoimmune disease, and as her college friend asked her what it "feels" like to have it, she came up with this brilliant metaphor- the spoon theory. 
 
-> Imagine we all have a certain numbers of spoons every morning we wake up. We think about this as energy, or the abilty we have to do things- if we use it all up, we get drained. For normal people, they usually are born and gifted with a somewhat endless numbers of spoons - everyday, thay can wake up and have minimum concern for how the things they are about to do might affect their body or their mind. Sure, the energy gets depleted, we get tired after a good amount of
+> "Imagine we all have a certain numbers of spoons every morning we wake up. We think about this as energy, or the abilty we have to do things- if we use it all up, we get drained." 
+
+For normal people, they usually are born and gifted with a somewhat endless numbers of spoons - everyday, thay can wake up and have minimum concern for how the things they are about to do might affect their body or their mind. Sure, the energy gets depleted, we get tired after a good amount of work, but usually, after some good food and a good 6 sleep cycles of rest, we come back with full health bar again. And not to mention that easy activities such as showering, cooking and other would usually be as easy as flipping to the back of their palms. 
+
+But for Christine, things are different. Each of even the easy acivities would cost her a spoon - waking up and opening her eyes would cost her a spoon, getting out of bed would cost a spoon, and taking medicine would only prevent all spoons from losing. 
+
+>  "I explained that I have to see what clothes I can physically put on, if my hands hurt that day buttons are out of the question. If I have bruises that day, I need to wear long sleeves, and if I have a fever I need a sweater to stay warm and so on. If my hair is falling out I need to spend more time to look presentable, and then you need to factor in another 5 minutes for feeling badly that it took you 2 hours to do all this."
 
 
-## Basic Structure
-This is a template for creating new blog posts. Copy this file and modify it for your new post.
 
-## Adding Images
-You can add images in two ways:
 
-### 1. Local Images
-Create a directory in \`src/assets/posts/your-post-slug/\` for post-specific images.
-![Image Description](image-name.png "Optional caption")
-
-### 2. External Images
-You can also use external image URLs:
-![External Image](https://example.com/image.jpg "External image caption")
-
-## Math Equations
-You can add math equations using KaTeX:
-
-### Inline Math
-This is an inline equation: $E = mc^2$
-
-### Block Math
-\`\`\`math
-\\frac{d}{dx}(x^n) = nx^{n-1}
-\`\`\`
-
-## Lists
-- Item 1
-- Item 2
-  - Subitem 2.1
-  - Subitem 2.2
-
-## Code Blocks
-\`\`\`javascript
-function example() {
-  console.log("Hello, world!");
-}
-\`\`\`
-
-## Quotes
-> This is a blockquote. Use it for important notes or citations.
+[Read Christine Miserandinos's full story here](https://www.butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/). 
 
 ## Links
 [Link text](https://example.com)
