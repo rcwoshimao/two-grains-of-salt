@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Supervised learning v.s. RRL: the difference",
-  tags: ["Tech/Reinforcement Learning"],
+  tags: ["Tech/ML", "Tech/RRL"],
   summary: "Comparing supervised learning with reinforcement learning."
 };
 

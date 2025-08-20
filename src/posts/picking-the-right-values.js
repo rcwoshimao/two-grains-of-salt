@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Picking the Right Values",
   slug: "picking-the-right-values",
-  tags: ["Life/Philosophy"],
+  tags: ["Life/Misc"],
   summary: "Some thoughts on values and their impact on our lives.",
   date: "2024-03-21"
 };

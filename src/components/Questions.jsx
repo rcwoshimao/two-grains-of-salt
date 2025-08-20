@@ -41,7 +41,7 @@ function Questions() {
   return (
     <div className="questions-container">
       <Link to="/" className="back-link">← Back</Link>
-      <h2> Ask me any question lowkey </h2>
+      <h2> Ask me any questions, or give me any suggestions lowkey </h2>
       {submitted ? (
         <div className="success-message">
           <p>Thank you for your question! I'll review it and may feature it in a future post.</p>

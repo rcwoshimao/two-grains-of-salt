@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Understanding the actual reason for current bottleneck in ML problem solving",
   summary: "Understand the problem before solving it!",
-  tags: ["Tech/Reinforcement Learning"]
+  tags: ["Tech/Misc", "Tech/ML"]
 };
 
 export const title = "Understanding the actual reason for current bottleneck in ML problem solving";
