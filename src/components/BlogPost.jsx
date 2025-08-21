@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react'; 
 import { getPostBySlug } from '../utils/blogUtils';
 import Banner from './Banner';
 import './BlogPost.css';
