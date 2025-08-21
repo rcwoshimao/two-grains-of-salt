@@ -2,7 +2,7 @@ export const metadata = {
   title: "The Spoon theory, and how we plan our days",
   tags: ["Life/Philosophy", "Life/Reflection"], 
   summary: "Some thoughts on the article I have read",
-  date: "2025-08-20", // Current date
+  // date: "2025-08-20", // Current date
   hidden: false // This post won't show up in the blog list
 };
 

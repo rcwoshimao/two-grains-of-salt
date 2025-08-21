@@ -24,9 +24,9 @@ function Home() {
       />
       <div className="posts-list">
         {filteredPosts.map((post) => (
-          <article key={post.id} className="post-preview">
+          <article key={post.slug} className="post-preview">
             <h2>
-              <Link to={`/post/${post.id}`}>{post.title}</Link>
+              <Link to={`/post/${post.slug}`}>{post.title}</Link>
             </h2>
             {post.summary && (
               <h4 className='post-summary'>{post.summary}</h4>

@@ -3,7 +3,7 @@ export const metadata = {
   slug: "picking-the-right-values",
   tags: ["Life/Misc"],
   summary: "Some thoughts on values and their impact on our lives.",
-  date: "2024-03-21"
+  // date: "2024-03-21"
 };
 
 export const content = `

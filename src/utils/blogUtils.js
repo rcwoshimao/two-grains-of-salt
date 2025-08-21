@@ -1,6 +1,5 @@
 import { marked } from 'marked';
 import katex from 'katex';
-import { v4 as uuidv4 } from 'uuid';
 import 'katex/dist/katex.min.css';
 
 // Configure marked with KaTeX and image handling
@@ -40,7 +39,7 @@ const renderer = {
 
       // For local images, first try post-specific directory
       const postId = window.location.pathname.split('/').pop();
-      const post = getPostById(postId) || getPostBySlug(postId);
+      const post = getPostBySlug(postId);
       if (post) {
         try {
           const postSpecificImg = new URL(`../assets/posts/${post.slug}/${href}`, import.meta.url).href;
@@ -71,102 +70,53 @@ try {
   console.warn('Could not load git-history.json, using current date for all posts');
 }
 
-// Function to get post dates
-const getPostDates = (fileName) => {
-  return gitHistory[fileName] || {
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  };
-};
-
-// Function to ensure post has an ID
-const ensurePostId = (post, fileName) => {
-  const metadata = post.metadata || {};
-  const slug = fileName.replace('.js', '');
-  
-  // Generate a consistent UUID based on the slug
-  if (!metadata.id) {
-    // Use the slug to generate a deterministic UUID
-    metadata.id = uuidv4({ namespace: '6ba7b810-9dad-11d1-80b4-00c04fd430c8', name: slug });
-  }
-  return metadata;
-};
 
 export const getAllPosts = () => {
   return Object.entries(blogPosts)
     .map(([filePath, post]) => {
       const fileName = filePath.split('/').pop();
-      const dates = getPostDates(fileName);
       const slug = fileName.replace('.js', '');
       
-      // Handle both metadata formats
-      const metadata = ensurePostId(post, fileName);
+      // Only use Git dates, no fallbacks
+      const dates = gitHistory[fileName] || {
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+      
       return {
-        id: metadata.id,
-        title: metadata.title || post.title,
-        date: metadata.createdAt || post.date,
-        slug: metadata.slug || post.slug || slug,
+        title: post.metadata?.title || post.title,
+        slug: slug, // Always use filename as slug
         createdAt: dates.createdAt,
         updatedAt: dates.updatedAt,
-        hidden: metadata.hidden || post.hidden || false,
-        summary: metadata.summary || post.summary,
-        tags: metadata.tags || post.tags || []
+        hidden: post.metadata?.hidden || post.hidden || false,
+        summary: post.metadata?.summary || post.summary, // Fixed the bug
+        tags: post.metadata?.tags || post.tags || []
       };
     })
     .filter(post => !post.hidden)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 };
 
-export const getPostById = (id) => {
-  const [filePath, post] = Object.entries(blogPosts).find(
-    ([_, post]) => {
-      const metadata = post.metadata || {};
-      return metadata.id === id;
-    }
-  ) || [null, null];
-  
-  if (!post) return null;
-  
-  const fileName = filePath.split('/').pop();
-  const dates = getPostDates(fileName);
-  const metadata = ensurePostId(post, fileName);
-  
-  return {
-    id: metadata.id,
-    title: metadata.title || post.title,
-    date: metadata.createdAt || post.date,
-    slug: metadata.slug || post.slug || fileName.replace('.js', ''),
-    createdAt: dates.createdAt,
-    updatedAt: dates.updatedAt,
-    content: marked(post.content),
-    tags: metadata.tags || post.tags || []
-  };
-};
-
-// Keep getPostBySlug for backward compatibility
 export const getPostBySlug = (slug) => {
   const [filePath, post] = Object.entries(blogPosts).find(
-    ([_, post]) => {
-      const metadata = post.metadata || {};
-      return metadata.slug === slug || post.slug === slug;
-    }
+    ([filePath, _]) => filePath.split('/').pop().replace('.js', '') === slug
   ) || [null, null];
   
   if (!post) return null;
   
   const fileName = filePath.split('/').pop();
-  const dates = getPostDates(fileName);
-  const metadata = ensurePostId(post, fileName);
+  const dates = gitHistory[fileName] || {
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
   
   return {
-    id: metadata.id,
-    title: metadata.title || post.title,
-    date: metadata.createdAt || post.date,
-    slug: metadata.slug || post.slug || fileName.replace('.js', ''),
+    title: post.metadata?.title || post.title,
+    slug: slug,
     createdAt: dates.createdAt,
     updatedAt: dates.updatedAt,
     content: marked(post.content),
-    tags: metadata.tags || post.tags || []
+    tags: post.metadata?.tags || post.tags || []
   };
 };
 

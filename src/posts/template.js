@@ -1,8 +1,7 @@
 export const metadata = {
   title: "Template Post",
-  tags: ["Category/Subcategory"], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
+  tags: [], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
   summary: "A brief summary of your post",
-  date: "YYYY-MM-DD", // Current date
   hidden: true // This post won't show up in the blog list
 };
 

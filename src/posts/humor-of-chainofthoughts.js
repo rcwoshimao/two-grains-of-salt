@@ -2,7 +2,6 @@ export const metadata = {
     title: "Something I learned about chain of thoughts",
     tags: ["Category/Subcategory"], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
     summary: "A brief summary of your post",
-    date: "YYYY-MM-DD", // Current date
     hidden: false // This post won't show up in the blog list
   };
   
