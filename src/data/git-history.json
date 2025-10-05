@@ -1,15 +1,19 @@
 {
+  "dealing-with-failure.js": {
+    "createdAt": "2025-10-05T13:34:11-07:00",
+    "updatedAt": "2025-10-05T13:34:11-07:00"
+  },
   "dynamic-programming-proof.js": {
     "createdAt": "2025-05-17T16:33:21-07:00",
     "updatedAt": "2025-05-28T14:01:08-07:00"
   },
   "gottmans-four-horsemen.js": {
     "createdAt": "2025-05-28T14:01:08-07:00",
-    "updatedAt": "2025-08-20T17:22:57-05:00"
+    "updatedAt": "2025-10-05T13:34:11-07:00"
   },
   "humor-of-chainofthoughts.js": {
     "createdAt": "2025-08-20T16:16:58-05:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
+    "updatedAt": "2025-10-05T13:34:11-07:00"
   },
   "image-test.js": {
     "createdAt": "2025-05-17T16:33:21-07:00",
@@ -17,15 +21,15 @@
   },
   "master-your-own-kingdom.js": {
     "createdAt": "2025-05-18T12:46:59-07:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
+    "updatedAt": "2025-08-20T19:15:31-05:00"
   },
   "ml-bottleneck.js": {
     "createdAt": "2025-05-17T16:33:21-07:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
+    "updatedAt": "2025-08-20T19:15:31-05:00"
   },
   "picking-the-right-values.js": {
     "createdAt": "2025-05-27T01:01:26-07:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
+    "updatedAt": "2025-08-20T19:15:31-05:00"
   },
   "rrl-vs-adversarial.js": {
     "createdAt": "2025-05-17T16:33:21-07:00",
@@ -37,11 +41,11 @@
   },
   "spoon-theory.js": {
     "createdAt": "2025-08-20T16:16:58-05:00",
-    "updatedAt": "2025-08-20T17:22:57-05:00"
+    "updatedAt": "2025-10-05T13:34:11-07:00"
   },
   "template.js": {
     "createdAt": "2025-08-20T16:16:58-05:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
+    "updatedAt": "2025-08-20T19:15:31-05:00"
   },
   "thoughts-on-language.js": {
     "createdAt": "2025-05-16T12:59:08-07:00",
