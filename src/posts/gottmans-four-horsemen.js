@@ -1,6 +1,6 @@
 export const metadata = {
   title: "How to resolve conflicts in relationships: Gottman's four horseman model",
-  summary: "A brief summary of your post",
+  summary: "A study on approaches to resolving relationship conflicts.",
   tags: ["Life/Relationships"], 
   // date: "2025-05-28",
   hidden: false // Set to false when ready to publish
