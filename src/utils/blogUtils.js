@@ -37,19 +37,18 @@ const renderer = {
         return `<img src="${href}" alt="${text}" title="${title || ''}" class="blog-image" />`;
       }
 
-      // For local images, first try post-specific directory
-      const postId = window.location.pathname.split('/').pop();
-      const post = getPostBySlug(postId);
-      if (post) {
-        try {
-          const postSpecificImg = new URL(`../assets/posts/${post.slug}/${href}`, import.meta.url).href;
-          return `<img src="${postSpecificImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
-        } catch {
-          // If not found in post directory, try common assets
-          const commonImg = new URL(`../assets/${href}`, import.meta.url).href;
-          return `<img src="${commonImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
-        }
+      // For local images, derive slug directly from URL path to avoid recursion.
+      // Calling getPostBySlug here would recurse while marked() is already rendering a post.
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      const currentSlug = pathParts[pathParts.length - 1];
+      if (currentSlug) {
+        const postSpecificImg = new URL(`../assets/posts/${currentSlug}/${href}`, import.meta.url).href;
+        return `<img src="${postSpecificImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
       }
+
+      // Fallback for non-post pages or missing slug.
+      const commonImg = new URL(`../assets/${href}`, import.meta.url).href;
+      return `<img src="${commonImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
     } catch (err) {
       console.warn('Failed to load image:', href);
       return `<img src="${href}" alt="${text}" title="${title || ''}" class="blog-image" />`;

@@ -1,0 +1,31 @@
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+}
+
+.loading-icon {
+  width: min(28vw, 120px);
+  height: min(28vw, 120px);
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.loading-title {
+  margin: 0;
+  color: var(--text-title-color2);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+.loading-welcome {
+  margin: 0;
+  color: var(--text-body-color1);
+  font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
