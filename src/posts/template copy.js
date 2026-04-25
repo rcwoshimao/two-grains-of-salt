@@ -1,12 +1,12 @@
 export const metadata = {
-  title: "What a conversation with Professor Gao Sicun at UCSD taught me",
+  title: "Operating principle",
   tags: [], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
-  summary: "If you have infinite resources, what would you do?",
+  summary: "A long and pleasant conversation with SR. Delivery Solutions Engineer Ben and my great hack teammate Varun.",
   hidden: true // This post won't show up in the blog list
 };
 
 export const content = `
-## What a conversation with Professor Gao Sicun at UCSD taught me
+# Operating principle
 
 ## Basic Structure
 This is a template for creating new blog posts. Copy this file and modify it for your new post.

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
 import './Questions.css';
 
 function Questions() {
@@ -14,19 +13,19 @@ function Questions() {
     setError('');
     
     try {
-      const { data, error: supabaseError } = await supabase
-        .from('questions')
-        .insert([
-          {
-            content: question,
-            email: email || null,
-            timestamp: new Date().toISOString(),
-            status: 'pending'
-          }
-        ]);
+      const response = await fetch('/api/questions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          question,
+          email: email || null
+        })
+      });
 
-      if (supabaseError) {
-        throw supabaseError;
+      if (!response.ok) {
+        throw new Error('Failed to send question');
       }
 
       setSubmitted(true);
