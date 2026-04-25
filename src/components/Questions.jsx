@@ -1,17 +1,89 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Questions.css';
 
+const TURNSTILE_SCRIPT_ID = 'cf-turnstile-script';
+
 function Questions() {
+  const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
   const [question, setQuestion] = useState('');
-  const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const widgetContainerRef = useRef(null);
+  const widgetIdRef = useRef(null);
+
+  useEffect(() => {
+    if (!turnstileSiteKey || !widgetContainerRef.current) {
+      return;
+    }
+
+    const renderWidget = () => {
+      if (!widgetContainerRef.current || !window.turnstile) {
+        return;
+      }
+
+      if (widgetIdRef.current !== null) {
+        window.turnstile.remove(widgetIdRef.current);
+      }
+
+      widgetIdRef.current = window.turnstile.render(widgetContainerRef.current, {
+        sitekey: turnstileSiteKey,
+        theme: 'auto',
+        callback: (token) => {
+          setTurnstileToken(token);
+          setError('');
+        },
+        'expired-callback': () => {
+          setTurnstileToken('');
+        },
+        'error-callback': () => {
+          setTurnstileToken('');
+          setError('Verification failed. Please try again.');
+        }
+      });
+    };
+
+    if (window.turnstile) {
+      renderWidget();
+      return;
+    }
+
+    const existingScript = document.getElementById(TURNSTILE_SCRIPT_ID);
+    if (existingScript) {
+      existingScript.addEventListener('load', renderWidget, { once: true });
+      return () => {
+        existingScript.removeEventListener('load', renderWidget);
+      };
+    }
+
+    const script = document.createElement('script');
+    script.id = TURNSTILE_SCRIPT_ID;
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    script.addEventListener('load', renderWidget, { once: true });
+    document.head.appendChild(script);
+
+    return () => {
+      script.removeEventListener('load', renderWidget);
+    };
+  }, [turnstileSiteKey]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    
+
+    if (!turnstileSiteKey) {
+      setError('Turnstile is not configured. Please contact site owner.');
+      return;
+    }
+
+    if (!turnstileToken) {
+      setError('Please complete the verification step.');
+      return;
+    }
+
     try {
       const response = await fetch('/api/questions', {
         method: 'POST',
@@ -20,20 +92,24 @@ function Questions() {
         },
         body: JSON.stringify({
           question,
-          email: email || null
+          turnstileToken
         })
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send question');
+        const responseBody = await response.json().catch(() => ({}));
+        throw new Error(responseBody.error || 'Failed to send question');
       }
 
       setSubmitted(true);
       setQuestion('');
-      setEmail('');
+      setTurnstileToken('');
+      if (widgetIdRef.current !== null && window.turnstile) {
+        window.turnstile.reset(widgetIdRef.current);
+      }
     } catch (error) {
       console.error('Error submitting question:', error);
-      setError('Failed to submit question. Please try again later.');
+      setError(error.message || 'Failed to submit question. Please try again later.');
     }
   };
 
@@ -59,18 +135,11 @@ function Questions() {
               placeholder="What's on your mind?"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Your Email (optional):</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="To receive a notification when your question is answered"
-            />
-          </div>
+          <div className="turnstile-container" ref={widgetContainerRef} />
           {error && <div className="error-message">{error}</div>}
-          <button type="submit">Submit Question</button>
+          <button type="submit" disabled={!turnstileToken}>
+            Submit Question
+          </button>
         </form>
       )}
     </div>
