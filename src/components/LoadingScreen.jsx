@@ -1,10 +1,10 @@
-import justdoit from '../assets/justdoit.png';
+import rc from '../assets/rc.PNG';
 import './LoadingScreen.css';
 
-function LoadingScreen() {
+function LoadingScreen({ exiting = false } = {}) {
   return (
-    <div className="loading-screen">
-      <img src={justdoit} alt="Two grains of salt icon" className="loading-icon" />
+    <div className={`loading-screen${exiting ? ' loading-screen--exiting' : ''}`}>
+      <img src={rc} alt="Two grains of salt icon" className="loading-icon" />
       <h1 className="loading-title">Two grains of salt</h1>
       <p className="loading-welcome">welcome</p>
     </div>

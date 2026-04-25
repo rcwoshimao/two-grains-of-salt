@@ -8,13 +8,14 @@
 
 :root {
   /* Dark theme (default) */
-  --background-color: #09202c;
+  --background-color: #00202c;
   --text-body-color1: #abffea;
   --text-body-color2: #f5b1cc; 
   --text-title-color1: #a288d9; 
   --text-title-color2: #ff248a;
   /* Layout */
-  --banner-height: calc(80px + 2rem); /* logo height + padding */
+  --banner-height: 64px; /* runtime-updated by `Banner` */
+  background-color: var(--background-color);
 }
 
 :root[data-theme="light"] {

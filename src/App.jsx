@@ -1,20 +1,46 @@
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Home from './Home';
 import BlogPost from './components/BlogPost';
 import Questions from './components/QnA/Questions';
 import LoadingScreen from './components/LoadingScreen';
 import Footer from './components/Footer';
-import './App.css';
 
 function App() {
-  // Initialize theme on app load
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      document.documentElement.setAttribute("data-theme", savedTheme);
+  const LOADING_MS = 2500;
+  const SLIDE_OUT_MS = 900;
+
+  const LOADING_SEEN_KEY = 'two-grains-of-salt:loading-seen';
+
+  const [showLoading, setShowLoading] = useState(() => {
+    try {
+      return window.sessionStorage.getItem(LOADING_SEEN_KEY) !== '1';
+    } catch {
+      return true;
     }
-  }, []);
+  });
+  const [exitingLoading, setExitingLoading] = useState(false);
+
+  useEffect(() => {
+    if (!showLoading) return;
+
+    try {
+      window.sessionStorage.setItem(LOADING_SEEN_KEY, '1');
+    } catch {
+      // If storage is blocked, just behave like "always show".
+    }
+
+    const startExit = window.setTimeout(() => setExitingLoading(true), LOADING_MS);
+    const remove = window.setTimeout(
+      () => setShowLoading(false),
+      LOADING_MS + SLIDE_OUT_MS
+    );
+
+    return () => {
+      window.clearTimeout(startExit);
+      window.clearTimeout(remove);
+    };
+  }, [showLoading]);
 
   return (
     <div className="app">
@@ -25,6 +51,8 @@ function App() {
         <Route path="/questions" element={<Questions />} />
       </Routes>
       <Footer />
+
+      {showLoading && <LoadingScreen exiting={exitingLoading} />}
     </div>
   );
 }

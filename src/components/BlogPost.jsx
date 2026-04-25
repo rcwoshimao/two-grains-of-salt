@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getPostBySlug } from '../utils/blogUtils';
 import Banner from './Banner';
+import ReadingProgress from './ReadingProgress';
 import './BlogPost.css';
 
 function BlogPost() {
@@ -31,6 +32,7 @@ function BlogPost() {
   return (
     <div className="blog-post-container">
       <Banner />
+      <ReadingProgress />
       <article className="blog-post">
         <Link to="/" className="back-link">← Back</Link>
         {post.tags && post.tags.length > 0 && (

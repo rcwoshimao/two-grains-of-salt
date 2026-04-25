@@ -18,10 +18,6 @@ function Home() {
   return (
     <div className="home">
       <Banner />
-      <TagFilter 
-        selectedTags={selectedTags} 
-        onTagSelect={setSelectedTags}
-      />
       <div style={{
         borderRadius: "40px",
         overflow: "hidden",
@@ -42,6 +38,10 @@ function Home() {
           }}
         />
       </div>
+      <TagFilter 
+        selectedTags={selectedTags} 
+        onTagSelect={setSelectedTags}
+      />
 
       <div className="posts-list">
         {filteredPosts.map((post) => (
