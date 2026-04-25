@@ -23,8 +23,23 @@ function escapeHtml(value) {
 }
 
 export default async function handler(req, res) {
+  if (req.method === 'GET') {
+    return res.status(200).json({
+      ok: true,
+      service: 'questions-email-api',
+      message: 'API is reachable. Use POST to submit a question.',
+      expectedBody: {
+        question: 'string (required, max 1000 chars)',
+        email: 'string (optional)'
+      }
+    });
+  }
+
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({
+      error: 'Method not allowed',
+      allowedMethods: ['GET', 'POST']
+    });
   }
 
   try {
