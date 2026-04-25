@@ -4,7 +4,7 @@ import { getAllPosts } from './utils/blogUtils';
 import Banner from './components/Banner';
 import TagFilter from './components/TagFilter';
 import './Home.css';
-
+import justdoit from "./assets/justdoit.png"
 function Home() {
   const [selectedTags, setSelectedTags] = useState([]);
   const allPosts = getAllPosts();
@@ -22,6 +22,27 @@ function Home() {
         selectedTags={selectedTags} 
         onTagSelect={setSelectedTags}
       />
+      <div style={{
+        borderRadius: "40px",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "40%",
+        margin: "0 auto",
+      }}>
+        <img
+          src={justdoit}
+          alt="just do it"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
+        />
+      </div>
+
       <div className="posts-list">
         {filteredPosts.map((post) => (
           <article key={post.slug} className="post-preview">
