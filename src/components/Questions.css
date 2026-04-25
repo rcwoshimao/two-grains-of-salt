@@ -3,8 +3,7 @@
   margin: 2rem auto;
   padding: 4rem 1rem 1rem;
   background-color: var(--background-color);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none; 
 }
 
 .back-link {
