@@ -106,6 +106,33 @@ button:disabled {
   margin-bottom: 1rem;
 }
 
+.answerbox {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--text-body-color2);
+  border-radius: 8px;
+  background-color: var(--background-color);
+}
+
+.answerbox-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.answerbox-answer {
+  margin: 0;
+  color: var(--text-body-color2);
+  line-height: 1.4;
+  text-align:start;
+}
+
+.answerbox-date {
+  text-align:end;
+}
+
 /* Tablet styles */
 @media screen and (max-width: 768px) {
   .questions-container {

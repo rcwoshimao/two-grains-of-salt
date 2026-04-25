@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Answerbox from './Answerbox';
+import qna from './QnA.json';
 import './Questions.css';
 
 const TURNSTILE_SCRIPT_ID = 'cf-turnstile-script';
@@ -13,6 +15,7 @@ function Questions() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const widgetContainerRef = useRef(null);
   const widgetIdRef = useRef(null);
+  const answers = Array.isArray(qna) ? qna : [];
 
   useEffect(() => {
     const removeWidget = () => {
@@ -202,6 +205,18 @@ function Questions() {
           </button>
         </form>
       )}
+
+      <div className="answers"> 
+        {answers.map((item, idx) => (
+          <Answerbox
+            // eslint-disable-next-line react/no-array-index-key
+            key={idx}
+            questionSubmitted={item?.questionSubmitted}
+            answer={item?.answer}
+            dateAnswered={item?.dateAnswered}
+          />
+        ))}
+      </div>
     </div>
   );
 }

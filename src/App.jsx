@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import Home from './Home';
 import BlogPost from './components/BlogPost';
-import Questions from './components/Questions';
+import Questions from './components/QnA/Questions';
 import LoadingScreen from './components/LoadingScreen';
 import Footer from './components/Footer';
 import './App.css';
