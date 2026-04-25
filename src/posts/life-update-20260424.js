@@ -1,8 +1,8 @@
 export const metadata = {
   title: "Life update and hackathons",
-  tags: [Tech/Hackathon, Life/LifeUpdate], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
+  tags: ['Tech/Hackathon', 'Life/LifeUpdate'], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
   summary: "What I have been up to, part 1.",
-  hidden: "False" 
+  hidden: false
 };
 
 export const content = `
