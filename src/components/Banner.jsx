@@ -45,7 +45,7 @@ function Banner() {
         {/*<span className="banner-text">Two grains of salt</span>*/}
       </div>
       <div className="banner-right">
-        <Link to="/questions" className="questions-link">Questions?</Link>
+        <Link to="/questions" className="questions-link">Ask me anything</Link>
         <ThemeToggle />
       </div>
     </div>

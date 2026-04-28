@@ -7,8 +7,8 @@ import LoadingScreen from './components/LoadingScreen';
 import Footer from './components/Footer';
 
 function App() {
-  const LOADING_MS = 2500;
-  const SLIDE_OUT_MS = 900;
+  const LOADING_MS = 1200;
+  const SLIDE_OUT_MS = 800;
 
   const LOADING_SEEN_KEY = 'two-grains-of-salt:loading-seen';
 
@@ -46,13 +46,13 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/loading" element={<LoadingScreen />} />
+        <Route path="/loading" element={<LoadingScreen exitMs={SLIDE_OUT_MS} />} />
         <Route path="/post/:slug" element={<BlogPost />} />
         <Route path="/questions" element={<Questions />} />
       </Routes>
       <Footer />
 
-      {showLoading && <LoadingScreen exiting={exitingLoading} />}
+      {showLoading && <LoadingScreen exiting={exitingLoading} exitMs={SLIDE_OUT_MS} />}
     </div>
   );
 }
