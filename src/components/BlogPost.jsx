@@ -9,6 +9,10 @@ function BlogPost() {
   const { slug } = useParams();
   const post = getPostBySlug(slug);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [slug]);
+
   // Fix: useEffect should only return a cleanup function, not JSX
   useEffect(() => {
     if (post && post.title) {
