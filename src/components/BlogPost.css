@@ -21,27 +21,33 @@
 .post-content h1 {
   font-size: 2rem;
   margin: 2rem 0 1rem;
-  color: var(--text-body-color1);
+  color: var(--text-title-color2);
   text-align: left;
 }
 
 .post-content h2 {
   font-size: 1.5rem;
   margin: 1.5rem 0 1rem;
-  color: var(--text-body-color1);
+  color: var(--text-title-color1);
   text-align: left;
 }
 
 .post-content h3 {
   font-size: 1.2rem;
   margin: 1.2rem 0 0.8rem;
-  color: var(--text-body-color1);
+  color: var(--text-body-color2);
   text-align: left;
 }
 
 .post-content p {
   margin: 0 0 0.8rem;
   text-align: left;
+}
+
+.post-content br {
+  display: block;
+  margin: 0.55rem 0;
+  content: "";
 }
 
 .post-content ul,
@@ -70,8 +76,22 @@
 
 /* Ensure consistent spacing for strong/bold text blocks */
 .post-content strong {
-  display: inline-block;
-  margin: 0.8rem 0;
+  font-weight: 700;
+  color: var(--text-body-color2);
+}
+
+.post-content b {
+  font-weight: 700;
+  color: var(--text-body-color2);
+}
+
+.post-content u,
+.post-content ins {
+  color: var(--text-body-color2);
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.18em;
+  text-decoration-skip-ink: auto;
 }
 
 .post-content blockquote {
