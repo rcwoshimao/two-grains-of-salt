@@ -10,7 +10,9 @@ export const content = `
 Around 2 weeks ago, I stumbled upon a Databricks workshop, which turned out to be a pre-hackathon event for Datahacks 2026, which me and my teammate Varun have been anticipating for long. I quickly realized how closely Databricks' technology connects to what I have done as a data engineer, so I was more than thrilled to use this toolstack during the Hackathon, and we ended up winning the First place of Best Use of Databricks Challenge.  In between the hackathon's mini career fair, I introduced my teammate to Ben Novak, a Delivery Solutions Engineer at Databricks, who had hosted the pre-event workshop and who I'd already been chatting with throughout. After we won, we decided to take that conversation further and set up a more personal sit-down with him. 
 
 
-Ben was generous with his time and answered all our questions thoughtfully. What I didn't expect was how much of the conversation drifts behind career advice, and here, I noted down not only the technical knowledge I learned, but also some of his honest perspective on life. Below is my best attempt at capturing the highlights of our discussion in a QnA format. Have fun reading! 
+Ben was generous with his time and answered all our questions thoughtfully. What I didn't expect was how much of the conversation drifts behind career advice, and here, I noted down not only the technical knowledge I learned, but also some of his honest perspective on life. Below is my best attempt at capturing the highlights of our discussion in a QnA format. This post has two parts: a quick breakdown of engineering roles and some career and life advice. Feel free to skip to whichever part interests you more.   
+
+Have fun reading!   
 
 ![data hacks](datahacks26.JPG)
 
