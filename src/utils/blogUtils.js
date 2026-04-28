@@ -42,7 +42,7 @@ const renderer = {
       const pathParts = window.location.pathname.split('/').filter(Boolean);
       const currentSlug = pathParts[pathParts.length - 1];
       if (currentSlug) {
-        const postSpecificImg = new URL(`../assets/posts/${currentSlug}/${href}`, import.meta.url).href;
+        const postSpecificImg = new URL(`../posts/${currentSlug}/${href}`, import.meta.url).href;
         return `<img src="${postSpecificImg}" alt="${text}" title="${title || ''}" class="blog-image" />`;
       }
 
@@ -59,7 +59,7 @@ const renderer = {
 marked.use({ renderer });
 
 // Import all blog posts
-const blogPosts = import.meta.glob('../posts/*.js', { eager: true });
+const blogPosts = import.meta.glob('../posts/**/*.js', { eager: true });
 
 // Import git history
 let gitHistory = {};
@@ -183,3 +183,4 @@ export const getAllTags = () => {
   });
   return Array.from(tagSet).sort();
 }; 
+
