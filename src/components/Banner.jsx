@@ -20,7 +20,7 @@ function Banner() {
 
     let ro;
     if (typeof ResizeObserver !== 'undefined') {
-      ro = new ResizeObserver(setBannerHeightVar);
+      ro = new ResizeObserver(setBannerHeightVar);  
       ro.observe(el);
     }
 

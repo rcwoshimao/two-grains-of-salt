@@ -18,24 +18,11 @@ function Home() {
   return (
     <div className="home">
       <Banner />
-      <div style={{
-        borderRadius: "40px",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "40%",
-        margin: "0 auto",
-      }}>
+      <div className="motivation-banner">
         <img
           src={justdoit}
           alt="just do it"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
-          }}
+          className="motivation-banner-image"
         />
       </div>
       <TagFilter 

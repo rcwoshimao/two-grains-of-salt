@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 export const content = `
-# Language is a Futile Device
+## Language is a Futile Device
 
 My thoughts are stagnant. I feel a deep incapability of moving forward seamlessly with the burden I carry in my mind, therefore I slowly work on it. It's come to me over the years that the best gift one can be given is the building of good life habits early on; but with how I was taught by the environment to live my life, I cannot say I know how to exactly enjoy and take advantage of it.
 

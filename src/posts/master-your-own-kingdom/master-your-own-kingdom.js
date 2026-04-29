@@ -6,7 +6,6 @@ export const metadata = {
 };
 
 export const content = `
-# Master Your Own Kingdom - Guy Ritchie & Joe Rogan
 
 Guy Ritche has always been a director I utterly respect and love. I have not done creative writing for a very long time, so the only way I know how to describe his humor is that it's like coal, dark, brittle, and sharp. His movies are full of people f&#42;cking up; Things gone wrong, nothing turns out according to plan, and from there comes comedy.  That probably doesn't even make sense to you who is reading, but if you have time, take a look at his movies. 
 

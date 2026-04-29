@@ -7,8 +7,6 @@ export const metadata = {
 };
 
 export const content = `
-# How to resolve conflicts in relationships: Gottman's four horseman model
-
 Conflicts in relationships—whether romantic or platonic—aren’t inherently negative. In fact, they’re inevitable. No two people think exactly alike, and even with the same words or intentions, miscommunication is always possible. But what truly impacts the quality and longevity of our relationships isn’t the presence of conflict—it’s how we handle it. When approached with care and understanding, conflict can actually deepen connection, not damage it.
 
 This idea isn’t just hopeful—it’s backed by research. Psychologist John Gottman, after decades of studying relationships, found he could predict with 90% accuracy whether a couple would stay together—just by observing how they argue.

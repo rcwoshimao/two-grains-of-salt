@@ -111,6 +111,7 @@ export const getPostBySlug = (slug) => {
   
   return {
     title: post.metadata?.title || post.title,
+    summary: post.metadata?.summary || post.summary || '',
     slug: slug,
     createdAt: dates.createdAt,
     updatedAt: dates.updatedAt,

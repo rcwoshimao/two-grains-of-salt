@@ -6,7 +6,6 @@ export const metadata = {
 };
 
 export const content = `
-# Operating principle
 Around 2 weeks ago, I stumbled upon a Databricks workshop, which turned out to be a pre-hackathon event for Datahacks 2026, which me and my teammate Varun have been anticipating for long. I quickly realized how closely Databricks' technology connects to what I have done as a data engineer, so I was more than thrilled to use this toolstack during the Hackathon, and we ended up winning the First place of Best Use of Databricks Challenge.  In between the hackathon's mini career fair, I introduced my teammate to Ben Novak, a Delivery Solutions Engineer at Databricks, who had hosted the pre-event workshop and who I'd already been chatting with throughout. After we won, we decided to take that conversation further and set up a more personal sit-down with him. 
 
 

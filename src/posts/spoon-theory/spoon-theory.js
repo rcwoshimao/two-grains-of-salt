@@ -7,9 +7,8 @@ export const metadata = {
 };
 
 export const content = `
-# The Spoon theory, and how we plan our days
 
-## 
+
 On Wednesday afternoon of the last week of my summer internship, I found myself rotting on my bed and playing gatcha game, seeing my time slowly slipping away. While I enjoy the concept of some me-time and simple rest, after a while, I cannot help but feel bored. It comes the realization that I have somewhat been low on motivation. 
 
 So I did what I always do when I am uncertain - I opened up my laptop, went on the browser, and typed in "Lost all motivation reddit". I have made this into a habit- whenever I cannot find data for a specific issue from my own brain, I consult other peoples' experience. Even if there isn't a one-size-fit-all solutions, simply understanding the issue better or knowing others share the experience provides food for thoughts and comfort. 

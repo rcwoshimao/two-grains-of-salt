@@ -6,7 +6,6 @@ export const metadata = {
 };
 
 export const content = `
-# Template Post
 
 ## Basic Structure
 This is a template for creating new blog posts. Copy this file and modify it for your new post.

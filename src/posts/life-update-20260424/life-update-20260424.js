@@ -6,7 +6,6 @@ export const metadata = {
 };
 
 export const content = `
-# Recent hackathons and life update
 Entering my last quarter of college, I decided to give myself a break and leave myself space to think and plan my future tragectory better. Here's a little blog post dedicated mostly to my future self and anyone who might be still interested in this side project collecting dust at the edge of the internet. But I don't mind. :) 
 
 ## Career

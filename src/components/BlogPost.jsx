@@ -39,6 +39,8 @@ function BlogPost() {
       <ReadingProgress />
       <article className="blog-post">
         <Link to="/" className="back-link">← Back</Link>
+        <h1 className="post-title">{post.title}</h1>
+        {post.summary && <p className="post-summary">{post.summary}</p>}
         {post.tags && post.tags.length > 0 && (
           <div className="post-tags">
             {post.tags.map(tag => (
