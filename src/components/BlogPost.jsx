@@ -36,9 +36,13 @@ function BlogPost() {
   return (
     <div className="blog-post-container">
       <Banner />
-      <ReadingProgress />
+      <div className="post-topbar">
+        <div className="post-topbar-content">
+          <Link to="/" className="post-back-link">← Back</Link>
+        </div>
+        <ReadingProgress />
+      </div>
       <article className="blog-post">
-        <Link to="/" className="back-link">← Back</Link>
         <h1 className="post-title">{post.title}</h1>
         {post.summary && <p className="post-summary">{post.summary}</p>}
         {post.tags && post.tags.length > 0 && (
