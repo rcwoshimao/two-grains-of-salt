@@ -28,10 +28,10 @@ So the experiences that shaped us, the hardship, the family dynamics, the weight
 Collect more data. Walk further into the space. Don't let a few early samples write the rest of the trajectory.
 
 ## Humans have bandwidth. Accept it
-He said it plainly: we have limits, and pretending otherwise doesn't expand them, it just burns them down. Rest isn't a reward for finishing. It's a requirement for functioning. We cannot run a good algorithm on a broken machine.
+He said it plainly: we have limits, and pretending otherwise doesn't expand them, it just burns them down. Rest isn't a reward for finishing. It's a requirement for functioning. We cannot run a good algorithm on a broken machine. (I really needed to hear this.)
 
 ## There is no "finding yourself."
-This geninely the coolest part. The idea that there's some true self buried underneath everything, some core you need to excavate and return to, he doesn't buy it. People are adaptive. We change, we grow, we contradict ourselves. There's no fixed center to find. The supposed true self is not "discovered", however build brick by brick, habit by habit, by ourselves. 
+The idea that there's some true self buried underneath everything, some core you need to excavate and return to, he doesn't buy it. People are adaptive. We change, we grow, we contradict ourselves. There's no fixed center to find. The supposed true self is not "discovered", however build brick by brick, habit by habit, by ourselves. 
 
 ## Know your objective before you start optimizing.
 Now you're looking forward. Asssume you're rested, you're not trapped by your past, you're not waiting for some revelation. So what do you *actually* want?
