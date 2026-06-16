@@ -14,7 +14,7 @@ function Footer() {
           <a href="https://linkedin.com/in/jiaying-chen01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="https://rc-personal-website.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Personal Website">
+          <a href="https://rcwoshimaodev.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Personal Website">
             <FaGlobe />
           </a>
         </div>

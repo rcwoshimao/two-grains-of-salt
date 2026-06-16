@@ -1,7 +1,7 @@
 export const metadata = {
   title: "If You Had Infinite Resources, What Would You Do?",
   tags: [], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
-  summary: "Coffee chat with one of my Favorite professors at UCSD",
+  summary: "Coffee chat with one of my Favorite professors, Gao Sicun, at UCSD",
   hidden: false // This post won't show up in the blog list
 };
 
@@ -15,7 +15,7 @@ If your mind went blank just now, you're not alone. Most of us can't answer it. 
 
 I've been in that fog for a while. Years of making decisions based on what seemed responsible, what wouldn't blow up in my face. Burnout crept in quietly as the exhaustion of optimizing hard for goals I never consciously chose. I was always afraid of making the wrong move. 
 
-Somewhere in between, a professor I grab coffee with dropped the infinite resource question to me. It was precise question. He's a researcher who thinks in trajectories and objective functions, and he has just offered me a guideline for finding our own objective function, before we waste years optimizing for someone else's.
+Somewhere in between, a professor I grab coffee with dropped the infinite resource question to me. It was a precise question. He's a researcher who thinks in trajectories and objective functions, and he has just offered me a guideline for finding our own objective function, before we waste years optimizing for someone else's.
 
 We covered many things in that conversation, so let me just share the parts I keep coming back to.
 

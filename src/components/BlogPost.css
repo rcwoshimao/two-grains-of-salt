@@ -26,10 +26,11 @@
 }
 
 .post-topbar-content {
-  width: 100%;
-  margin: 0;
-  padding: 0.45rem 0 0.7rem 0;
-
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.45rem 0 0.7rem 0.5rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .post-topbar .reading-progress {
@@ -256,9 +257,9 @@
   }
 
   .post-topbar-content {
-    width: 100%;
-    margin: 0;
-    padding: 0.45rem 0 0.65rem 0;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0.45rem 0.75rem 0.65rem;
   }
 
 
@@ -302,6 +303,7 @@
     width: 100%;
     margin: 0;
     padding: 0.4rem 0 0.6rem 0;
+    justify-content: center;
   }
 
   .post-content {
