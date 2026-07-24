@@ -70,17 +70,39 @@ try {
 }
 
 
+function getCreatedAtFromFilename(fileName) {
+  const base = String(fileName || '').trim().replace(/\.js$/i, '');
+  let match = base.match(/^(\d{4})(\d{2})(\d{2})(?:-|$)/);
+  if (match) {
+    return new Date(Date.UTC(+match[1], +match[2] - 1, +match[3], 12)).toISOString();
+  }
+  match = base.match(/-(\d{4})(\d{2})(\d{2})$/);
+  if (match) {
+    return new Date(Date.UTC(+match[1], +match[2] - 1, +match[3], 12)).toISOString();
+  }
+  return null;
+}
+
+function resolvePostDates(fileName) {
+  const fromHistory = gitHistory[fileName];
+  const fromFilename = getCreatedAtFromFilename(fileName);
+  const now = new Date().toISOString();
+
+  const createdAt = fromFilename || fromHistory?.createdAt || now;
+  let updatedAt = fromHistory?.updatedAt || createdAt;
+  if (new Date(updatedAt) < new Date(createdAt)) {
+    updatedAt = createdAt;
+  }
+
+  return { createdAt, updatedAt };
+}
+
 export const getAllPosts = () => {
   return Object.entries(blogPosts)
     .map(([filePath, post]) => {
       const fileName = filePath.split('/').pop();
       const slug = fileName.replace('.js', '');
-      
-      // Only use Git dates, no fallbacks
-      const dates = gitHistory[fileName] || {
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
+      const dates = resolvePostDates(fileName);
       
       return {
         title: post.metadata?.title || post.title,
@@ -93,6 +115,7 @@ export const getAllPosts = () => {
       };
     })
     .filter(post => !post.hidden)
+    // Always sort by creation date (newest first), never by update date
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 };
 
@@ -104,10 +127,7 @@ export const getPostBySlug = (slug) => {
   if (!post) return null;
   
   const fileName = filePath.split('/').pop();
-  const dates = gitHistory[fileName] || {
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  };
+  const dates = resolvePostDates(fileName);
   
   return {
     title: post.metadata?.title || post.title,

@@ -1,70 +1,66 @@
 {
-  "candles-20260424.js": {
-    "createdAt": "2026-04-25T00:36:32-07:00",
-    "updatedAt": "2026-04-25T00:36:32-07:00"
+  "20250518-ml-bottleneck.js": {
+    "createdAt": "2025-05-18T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.361Z"
   },
-  "dealing-with-failure.js": {
-    "createdAt": "2025-10-05T13:34:11-07:00",
-    "updatedAt": "2026-04-25T00:36:32-07:00"
+  "20250518-rrl-vs-adversarial.js": {
+    "createdAt": "2025-05-18T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.362Z"
   },
-  "dynamic-programming-proof.js": {
-    "createdAt": "2025-05-17T16:33:21-07:00",
-    "updatedAt": "2025-05-28T14:01:08-07:00"
+  "20250518-sl-vs-rrl.js": {
+    "createdAt": "2025-05-18T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.362Z"
   },
-  "gottmans-four-horsemen.js": {
-    "createdAt": "2025-05-28T14:01:08-07:00",
-    "updatedAt": "2025-10-05T13:34:11-07:00"
+  "20250519-master-your-own-kingdom.js": {
+    "createdAt": "2025-05-19T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.359Z"
   },
-  "humor-of-chainofthoughts.js": {
-    "createdAt": "2025-08-20T16:16:58-05:00",
-    "updatedAt": "2025-10-05T13:34:11-07:00"
+  "20250527-picking-the-right-values.js": {
+    "createdAt": "2025-05-27T12:00:00.000Z",
+    "updatedAt": "2026-04-28T17:57:58.220Z"
   },
-  "image-test.js": {
-    "createdAt": "2025-05-17T16:33:21-07:00",
-    "updatedAt": "2025-05-28T14:01:08-07:00"
+  "20250529-gottmans-four-horsemen.js": {
+    "createdAt": "2025-05-29T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.334Z"
   },
-  "life-update-20260424.js": {
-    "createdAt": "2026-04-25T00:36:32-07:00",
-    "updatedAt": "2026-04-25T00:40:47-07:00"
+  "20251006-do-something-principle.js": {
+    "createdAt": "2025-10-06T12:00:00.000Z",
+    "updatedAt": "2026-07-24T22:33:16+08:00"
   },
-  "master-your-own-kingdom.js": {
-    "createdAt": "2025-05-18T12:46:59-07:00",
-    "updatedAt": "2025-08-20T19:15:31-05:00"
+  "20260424-candles.js": {
+    "createdAt": "2026-04-24T12:00:00.000Z",
+    "updatedAt": "2026-07-24T22:33:16+08:00"
   },
-  "ml-bottleneck.js": {
-    "createdAt": "2025-05-17T16:33:21-07:00",
-    "updatedAt": "2025-08-20T19:15:31-05:00"
+  "20260424-life-update.js": {
+    "createdAt": "2026-04-24T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.359Z"
   },
-  "operating-principle.js": {
-    "createdAt": "2026-04-28T01:19:20-07:00",
-    "updatedAt": "2026-04-28T01:19:20-07:00"
+  "20260425-infinite-resources.js": {
+    "createdAt": "2026-04-25T12:00:00.000Z",
+    "updatedAt": "2026-06-16T19:07:45.170Z"
   },
-  "picking-the-right-values.js": {
-    "createdAt": "2025-05-27T01:01:26-07:00",
-    "updatedAt": "2025-08-20T19:15:31-05:00"
+  "20260428-operating-principle.js": {
+    "createdAt": "2026-04-28T12:00:00.000Z",
+    "updatedAt": "2026-06-16T18:53:29.362Z"
   },
-  "ponders-20260425.js": {
-    "createdAt": "2026-04-28T01:19:20-07:00",
-    "updatedAt": "2026-04-28T01:19:20-07:00"
+  "20260721-facing-the-inevitable.js": {
+    "createdAt": "2026-07-21T12:00:00.000Z",
+    "updatedAt": "2026-07-21T13:52:31.377Z"
   },
-  "rrl-vs-adversarial.js": {
-    "createdAt": "2025-05-17T16:33:21-07:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
-  },
-  "sl-vs-rrl.js": {
-    "createdAt": "2025-05-17T16:33:21-07:00",
-    "updatedAt": "2025-08-20T16:16:58-05:00"
+  "20260724-gone-a-long-way.js": {
+    "createdAt": "2026-07-24T12:00:00.000Z",
+    "updatedAt": "2026-07-24T14:33:06.400Z"
   },
   "spoon-theory.js": {
     "createdAt": "2025-08-20T16:16:58-05:00",
-    "updatedAt": "2025-10-05T13:34:11-07:00"
+    "updatedAt": "2026-04-29T12:03:28-07:00"
   },
   "template.js": {
     "createdAt": "2025-08-20T16:16:58-05:00",
-    "updatedAt": "2025-08-20T19:15:31-05:00"
+    "updatedAt": "2026-04-29T12:03:28-07:00"
   },
   "thoughts-on-language.js": {
     "createdAt": "2025-05-16T12:59:08-07:00",
-    "updatedAt": "2025-05-28T14:01:08-07:00"
+    "updatedAt": "2026-04-29T12:03:28-07:00"
   }
 }
