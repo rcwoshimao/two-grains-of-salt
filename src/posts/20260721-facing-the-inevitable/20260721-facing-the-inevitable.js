@@ -20,5 +20,4 @@ Last night, I was searching up Hospice care, and I was thinking about how they w
 
 This morning, I finally talked to my grandma about it, about how I think if I say this to her she would be mad or sad. But she was actually very open about it. She told me she wants to see me more when she is still alive and kicking, and I am so glad I am spending a lot of time with her this summer. She is also still worrying about me. Even prior to this, she has told me about how she wants to pass away peacefully in her sleep. I think it's for the best. 
 
-
 `
