@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "A Coffee Chat with a Principal Technical Program Manager",
-  tags: ["CoffeeChat/CoffeeChat"], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
+  title: "On Leading Through Complexity: A Coffee Chat with Principle TPM Patrick S",
+  tags: ["CoffeeChat/CoffeeChat"], 
   summary: "A coffee chat with Patrick S, a Principal Technical Program Manager, about cross-team leadership, career growth, corporate security, and advice for people early in their careers.",
   hidden: false // This post will show up in the blog list
 };
