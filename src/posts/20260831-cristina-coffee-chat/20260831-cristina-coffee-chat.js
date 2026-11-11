@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "On Asking Questions: A Chat with Cristina Nedelcu",
+  title: "On Asking Questions: A Chat with an Information Security Engineer Cristina Nedelcu",
   tags: ["CoffeeChat/CoffeeChat"], // e.g., ["Tech/Reinforcement Learning"] or ["Life/Philosophy"]
   summary: "Coffee Chat with Cristina, a fellow Mastercard Information Security Egineer about growth, curiosity, and mentorship.",
   hidden: false // This post won't show up in the blog list
